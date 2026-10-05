@@ -25,6 +25,8 @@ Most of my firmware work happens at **APES Lab**, where I contribute to a **comm
 
 Alongside that, I build **complete IoT products end-to-end** — PCB design, firmware, backend, and mobile app — mostly as university capstone and scholarship projects.
 
+My AI background is formal, not just self-taught: a **Machine Learning Specialization (DeepLearning.AI × Stanford)** and a **Deep Learning Specialization (DeepLearning.AI)**, five courses in total. That foundation is what lets me run models on-device — YOLOv11n for vehicle damage assessment, and a Vietnamese voice-command classifier running entirely on an ESP32-P4 with no cloud dependency.
+
 **Currently targeting full-time Embedded / IoT roles**, ideally in Japan. I hold a **JLPT N3** certification, so I can work in Japanese.
 
 ---
@@ -69,6 +71,27 @@ Alongside that, I build **complete IoT products end-to-end** — PCB design, fir
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 ![EasyEDA](https://img.shields.io/badge/EasyEDA%20Pro-0F6CBD?style=for-the-badge&logo=easyeda&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+---
+
+## 📜 Certifications
+
+**Machine Learning Specialization** — DeepLearning.AI × Stanford University
+
+| Course | Issued | Credential |
+|---|---|---|
+| Supervised ML: Regression & Classification | Apr 2025 | [verify](https://www.coursera.org/verify/M47TFJODCUNI) |
+| Advanced Learning Algorithms | Apr 2025 | [verify](https://www.coursera.org/verify/2VXVI89JR95T) |
+| Unsupervised Learning, Recommender Systems & Reinforcement Learning | May 2025 | [verify](https://www.coursera.org/verify/MAEJCBE6MVSF) |
+| Machine Learning Capstone | May 2025 | [verify](https://www.coursera.org/verify/UHT9B8ZDAYAU) |
+
+**Deep Learning Specialization** — DeepLearning.AI
+
+| Course | Issued | Credential |
+|---|---|---|
+| Neural Networks and Deep Learning | Jul 2025 | [verify](https://www.coursera.org/verify/XEGM5HWY79T5) |
+
+**Language** — **JLPT N3**, Japanese Language Proficiency Test ([jlpt.jp](https://www.jlpt.jp/))
 
 ---
 
@@ -194,7 +217,7 @@ I also maintain a personal **hardware notebook** — schematics, pinouts, datash
 
 ## 🎯 Currently
 
-- 🔭 **Building** — a shared embedded/IoT driver toolkit, plus a portfolio site
+- 🔭 **Building** — a shared embedded/IoT driver toolkit ([`embedded-iot-toolkit`](https://github.com/CatKod/embedded-iot-toolkit)), plus a portfolio site
 - 🌱 **Deepening** — DMA & interrupt-driven STM32 peripherals, RTOS scheduling, and moving Edge AI from rule-based classifiers to **TensorFlow Lite Micro**
 - 🇯🇵 **Open to** full-time Embedded / IoT roles in Japan (JLPT N3)
 - 💬 **Ask me about** MISRA C compliance in practice, CAN bus timing, non-blocking firmware design, or STM32 ⇄ ESP32 UART protocol design
