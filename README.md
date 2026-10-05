@@ -231,7 +231,6 @@ I also maintain a personal **hardware notebook** — schematics, pinouts, datash
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kim-v%C4%A9nh-ho%C3%A0ng-9a306935a/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kimvinhh6@gmail.com)
 [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://web.facebook.com/HoangKiVinh)
-[![JLPT](https://img.shields.io/badge/JLPT%20N3-B01C2E?style=for-the-badge&logo=japan&logoColor=white)](https://www.jlpt.jp/)
 
 </div>
 
