@@ -142,6 +142,7 @@ A complete IoT product built from the ground up, covering every layer:
 
 | Project | What it shows |
 |---|---|
+| [`embedded-iot-toolkit`](https://github.com/CatKod/embedded-iot-toolkit) | **My own open-source library** — portable C99 building blocks: non-blocking timers, ISR-safe framed serial protocol, CAN 2.0B codec. 89 unit tests, CI on gcc + clang. |
 | [`Yootek-IOT-intern`](https://github.com/CatKod/Yootek-IOT-intern) | **Enterprise IoT internship** — SmartGarden: ESP32/ESP-IDF firmware + NestJS + PostgreSQL + Prisma + MQTT + WebSocket + JWT/RBAC |
 | [`AIoT-Face_And_Order`](https://github.com/CatKod/AIoT-Face_And_Order) | ESP32-CAM → HTTP → OpenCV face detection pipeline |
 | [`Attendance_Check`](https://github.com/CatKod/Attendance_Check) | Production system at APES Lab — Next.js admin + Electron kiosk + Expo + Supabase |
@@ -168,6 +169,10 @@ I'm not able to publish this code, but it's the largest part of my experience an
 - Device drivers for **7 WIZnet Ethernet controllers** (W5100 / W5100S / W5200 / W5300 / W5500 / W6100 / W6300)
 - **OCPP** charge-point management, **GB/T 27930** vehicle-side comms, **DLT-645** DC energy metering
 - **Bootloader / IAP** over USB and Ethernet, **USB Host** with **FATFS** log export, RFID, insulation monitoring (IMD), PT1000 thermal measurement
+
+Because the industrial code can't be shown, I extracted the reusable patterns into
+a public library — **[`embedded-iot-toolkit`](https://github.com/CatKod/embedded-iot-toolkit)** — with 89 host unit tests running in CI on two compilers. It's the public
+evidence that the standards discipline above is real, not just a claim.
 
 <details>
 <summary>🖼️ 6-axis robotic arm control (third-party platform)</summary>
@@ -217,8 +222,9 @@ I also maintain a personal **hardware notebook** — schematics, pinouts, datash
 
 ## 🎯 Currently
 
-- 🔭 **Building** — a shared embedded/IoT driver toolkit ([`embedded-iot-toolkit`](https://github.com/CatKod/embedded-iot-toolkit)), plus a portfolio site
-- 🌱 **Deepening** — DMA & interrupt-driven STM32 peripherals, RTOS scheduling, and moving Edge AI from rule-based classifiers to **TensorFlow Lite Micro**
+- 🔭 **Building** — extending the toolkit with more drivers, and learning
+  TensorFlow Lite Micro to move real models onto the MCU
+- 🌱 **Deepening** — DMA & interrupt-driven STM32 peripherals, RTOS scheduling
 - 🇯🇵 **Open to** full-time Embedded / IoT roles in Japan (JLPT N3)
 - 💬 **Ask me about** MISRA C compliance in practice, CAN bus timing, non-blocking firmware design, or STM32 ⇄ ESP32 UART protocol design
 
@@ -228,9 +234,11 @@ I also maintain a personal **hardware notebook** — schematics, pinouts, datash
 
 <div align="center">
 
+[![Website](https://img.shields.io/badge/Website-4A9EFF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://catkod.github.io/CatKod/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kim-v%C4%A9nh-ho%C3%A0ng-9a306935a/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kimvinhh6@gmail.com)
 [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://web.facebook.com/HoangKiVinh)
+[![JLPT](https://img.shields.io/badge/JLPT%20N3-B01C2E?style=for-the-badge&logo=japan&logoColor=white)](https://www.jlpt.jp/)
 
 </div>
 
