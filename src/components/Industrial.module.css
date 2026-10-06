@@ -1,0 +1,232 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.32rem 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--power) 45%, transparent);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--power) 9%, transparent);
+  color: var(--power);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.badgeDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.disclaimer {
+  margin-top: 1.15rem;
+  max-width: var(--measure);
+  color: var(--ink-mute);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+/* ---------------------------------------------------------------- blocks - */
+
+.block {
+  margin-top: 3.25rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 1.02rem + 0.5vw, 1.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.sub {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--power);
+}
+
+.summary {
+  margin-top: 0.95rem;
+  max-width: var(--measure);
+  color: var(--ink-dim);
+}
+
+.ringPlaceholder {
+  margin-top: 1.75rem;
+  aspect-ratio: 16 / 11;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.diagram {
+  margin-top: 2.25rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--panel);
+}
+
+.diagramHead {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 1.1rem;
+}
+
+/* ---------------------------------------------------------------- points - */
+
+/* A definition-style list, not a numbered card grid. The order is the
+   architecture's order, which is genuinely a sequence, so numbering is
+   honest here — but it is carried by a hairline, not by a badge. */
+.points {
+  list-style: none;
+  padding: 0;
+  margin-top: 2.25rem;
+  counter-reset: point;
+}
+
+.point {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: 0 1.1rem;
+  padding: 1.05rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.point::before {
+  counter-increment: point;
+  content: counter(point, decimal-leading-zero);
+  grid-row: span 2;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-mute);
+  padding-top: 0.25em;
+}
+
+.pointTitle {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+}
+
+.pointBody {
+  margin-top: 0.3rem;
+  max-width: var(--measure);
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  line-height: 1.62;
+}
+
+/* ------------------------------------------------------------------ tags - */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.tags li {
+  padding: 0.22rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--inset);
+  color: var(--ink-mute);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+/* ------------------------------------------------------------ definition - */
+
+.defList {
+  margin: 1.25rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.defRow {
+  display: grid;
+  grid-template-columns: minmax(9rem, 14rem) minmax(0, 1fr);
+  gap: 0.35rem 2rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.defTitle {
+  font-weight: 500;
+  font-size: 0.92rem;
+}
+
+.defBody {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ----------------------------------------------------------------- robot - */
+
+.robotBadge {
+  display: inline-block;
+  margin-top: 0.55rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px dashed var(--line-strong);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--ink-mute);
+}
+
+.details {
+  margin-top: 1.4rem;
+}
+
+.summary {
+  display: inline-block;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition:
+    border-color 150ms var(--ease-snap),
+    color 150ms var(--ease-snap);
+}
+
+.summary:hover {
+  border-color: var(--power);
+  color: var(--power);
+}
+
+.summary::marker {
+  color: var(--ink-mute);
+}
+
+.robotImage {
+  margin-top: 1.1rem;
+  width: 100%;
+  max-width: 41rem;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+
+@media (max-width: 46rem) {
+  .defRow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .point {
+    grid-template-columns: 1.75rem minmax(0, 1fr);
+  }
+}

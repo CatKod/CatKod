@@ -1,0 +1,203 @@
+.figure {
+  margin: 0;
+}
+
+.svg {
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  margin-inline: auto;
+  display: block;
+  /* The diagram is dark-on-dark, so it needs a lift off the page ground. */
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+/* ------------------------------------------------------------------ bus - */
+
+.bus {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 2;
+}
+
+/* --------------------------------------------------------------- search - */
+
+/* Direction is encoded twice: by radius (inside the bus = clockwise, outside
+   = anticlockwise) and by colour. Redundancy is cheap here and means the
+   diagram still reads correctly in monochrome.
+
+   Each arc is a solid line that draws itself in once the figure scrolls
+   into view: it starts with `stroke-dashoffset: 1` (over the full
+   normalised length, since each path declares `pathLength="1"`) and
+   animates to 0. The arrow head lives at the path's end, so it is
+   naturally hidden until the dash reaches it. */
+.cw path,
+.ccw path {
+  fill: none;
+  stroke-width: 1.6;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  /* Stay invisible until the IntersectionObserver has confirmed the
+     figure is on screen. `forwards` keeps the final state after the
+     animation ends. */
+  animation: drawArc 1100ms var(--ease-out) forwards;
+  animation-delay: 80ms;
+  animation-play-state: paused;
+}
+
+.figure.in .cw path,
+.figure.in .ccw path {
+  animation-play-state: running;
+}
+
+.cw path {
+  stroke: var(--power);
+}
+
+.ccw path {
+  stroke: var(--run);
+}
+
+@keyframes drawArc {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cw path,
+  .ccw path {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+}
+
+.arrowHead {
+  fill: var(--power);
+}
+
+.arrowHeadAlt {
+  fill: var(--run);
+}
+
+/* ----------------------------------------------------------------- node - */
+
+.cab {
+  fill: var(--panel-raised);
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+
+.cabSource {
+  fill: color-mix(in srgb, var(--power) 22%, var(--panel-raised));
+  stroke: var(--power);
+  stroke-width: 1.6;
+}
+
+.cabTarget {
+  fill: color-mix(in srgb, var(--run) 18%, var(--panel-raised));
+  stroke: var(--run);
+  stroke-width: 1.4;
+}
+
+.nodeNum {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  text-anchor: middle;
+  fill: var(--ink-dim);
+  /* Opt out of the document's tabular-nums, which would look wrong here. */
+  font-variant-numeric: normal;
+}
+
+.node[data-step='0'] .nodeNum {
+  fill: var(--power);
+  font-weight: 600;
+}
+
+.node[data-step='1'] .nodeNum {
+  fill: var(--run);
+  font-weight: 600;
+}
+
+/* A tick above every cabinet the scan actually looked at, so "examined" and
+   "chosen" are visually distinct. */
+.scanned {
+  fill: var(--ink-mute);
+}
+
+.centre {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-anchor: middle;
+  fill: var(--ink-mute);
+}
+
+.centreStrong {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  text-anchor: middle;
+  fill: var(--ink);
+}
+
+/* -------------------------------------------------------------- caption - */
+
+.caption {
+  margin-top: 1.4rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line);
+}
+
+.legend {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.legend li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  color: var(--ink-dim);
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+
+.swatch {
+  flex: none;
+  width: 0.85rem;
+  height: 0.65rem;
+  margin-top: 0.3em;
+  border-radius: 1px;
+  border: 1px solid;
+}
+
+.sSource {
+  background: color-mix(in srgb, var(--power) 22%, var(--panel-raised));
+  border-color: var(--power);
+}
+
+.sTarget {
+  background: color-mix(in srgb, var(--run) 18%, var(--panel-raised));
+  border-color: var(--run);
+}
+
+.sIdle {
+  background: var(--panel-raised);
+  border-color: var(--line-strong);
+}
+
+.note {
+  margin-top: 1rem;
+  color: var(--ink-mute);
+  font-size: 0.83rem;
+  line-height: 1.62;
+  max-width: var(--measure);
+}

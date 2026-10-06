@@ -1,0 +1,208 @@
+.intro {
+  margin-bottom: 2.5rem;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  /* 1px gap over a line colour = hairline separation, no card shadows and
+     no rounded-rectangle-everywhere. */
+  background: var(--line);
+  border-block: 1px solid var(--line);
+}
+
+.item {
+  padding: clamp(1.5rem, 3vw, 2.1rem) 0 clamp(1.75rem, 3.5vw, 2.4rem);
+  background: var(--ground);
+}
+
+.itemHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.itemTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem);
+  letter-spacing: -0.022em;
+  line-height: 1.15;
+}
+
+.itemTitle a {
+  transition: color 150ms var(--ease-snap);
+}
+
+.itemTitle a:hover {
+  color: var(--power);
+}
+
+.badge {
+  flex: none;
+  padding: 0.22rem 0.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+
+.sub {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--power);
+  letter-spacing: 0.01em;
+}
+
+.body {
+  margin-top: 0.9rem;
+  max-width: var(--measure);
+  color: var(--ink-dim);
+  font-size: 0.95rem;
+}
+
+/* The pull line. A left rule in the power colour marks it as a quote
+   without resorting to quotation marks. */
+.callout {
+  margin-top: 1.15rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--power);
+  max-width: 60ch;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.outcome {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--ink-dim);
+}
+
+.outcomeMark {
+  flex: none;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--run);
+  transform: translateY(-1px);
+}
+
+.image {
+  margin-top: 1.4rem;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1.25rem;
+}
+
+.tech li {
+  padding: 0.22rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--panel);
+  color: var(--ink-dim);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.repo {
+  display: inline-block;
+  margin-top: 1.15rem;
+  color: var(--ink-mute);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 4px;
+  transition:
+    color 150ms var(--ease-snap),
+    text-decoration-color 150ms var(--ease-snap);
+}
+
+.repo:hover {
+  color: var(--power);
+  text-decoration-color: var(--power);
+}
+
+.repo .readout {
+  font-size: 0.76rem;
+}
+
+/* ------------------------------------------------------------------ more - */
+
+.more {
+  margin-top: 3rem;
+}
+
+.moreHead {
+  margin-bottom: 0.9rem;
+}
+
+.ledger {
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.ledgerRow {
+  display: grid;
+  grid-template-columns: minmax(9rem, 15rem) minmax(0, 1fr);
+  gap: 0.5rem 2rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ledgerName {
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.ledgerName a:hover {
+  color: var(--power);
+}
+
+/* Touch target (WCAG 2.5.8). The repo name is 0.82rem of text in a grid
+   cell; padding would break the row rhythm, so the hit area is grown with
+   an empty pseudo-element instead. */
+@media (pointer: coarse) {
+  .ledgerName a {
+    position: relative;
+  }
+
+  .ledgerName a::after {
+    content: '';
+    position: absolute;
+    inset: -0.65rem -0.5rem;
+  }
+}
+
+.ledgerShows {
+  color: var(--ink-mute);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 46rem) {
+  .ledgerRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.3rem;
+  }
+}

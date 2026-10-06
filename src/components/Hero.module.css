@@ -1,0 +1,178 @@
+.hero {
+  padding-top: clamp(3.5rem, 12vh, 7rem);
+  padding-bottom: var(--section-gap);
+}
+
+/* ------------------------------------------------------------- the intro - */
+
+/* The one orchestrated entrance on the page. Each line arrives in turn, so
+   the eye is walked down the hero instead of being handed five things at
+   once. Fast arrival, slow settle. */
+.stagger > * {
+  opacity: 0;
+  animation: arrive 720ms var(--ease-out) forwards;
+}
+
+.stagger > *:nth-child(1) {
+  animation-delay: 60ms;
+}
+.stagger > *:nth-child(2) {
+  animation-delay: 150ms;
+}
+.stagger > *:nth-child(3) {
+  animation-delay: 260ms;
+}
+.stagger > *:nth-child(4) {
+  animation-delay: 370ms;
+}
+.stagger > *:nth-child(5) {
+  animation-delay: 470ms;
+}
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.eyebrow {
+  margin-bottom: 1.4rem;
+}
+
+.title {
+  font-size: clamp(2.6rem, 1.2rem + 6.4vw, 5.1rem);
+  max-width: 16ch;
+}
+
+.titleAccent {
+  /* The one place colour is spent on display type. Amber is the power
+     colour, and this headline is about power. */
+  color: var(--power);
+}
+
+.lede {
+  margin-top: 1.75rem;
+}
+
+/* ------------------------------------------------------------------ tags - */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.tags li {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--panel);
+  color: var(--ink-dim);
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------- actions - */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 2.25rem;
+}
+
+.btn,
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.62rem 1.05rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition:
+    border-color 160ms var(--ease-snap),
+    background 160ms var(--ease-snap),
+    color 160ms var(--ease-snap);
+}
+
+.btn:hover {
+  border-color: var(--ink-dim);
+  background: var(--panel);
+}
+
+/* The primary action is filled rather than outlined — one filled element in
+   the whole hero, so it is unambiguous. */
+.btnPrimary {
+  border-color: var(--power);
+  background: var(--power);
+  color: var(--inset);
+  font-weight: 600;
+}
+
+.btnPrimary:hover {
+  background: color-mix(in srgb, var(--power) 88%, white);
+  border-color: color-mix(in srgb, var(--power) 88%, white);
+}
+
+/* ----------------------------------------------------------------- stats - */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1px;
+  margin: clamp(3rem, 8vh, 5rem) 0 0;
+  /* A 1px gap over a background gives a hairline grid, so the readouts look
+     like adjacent instrument fields rather than four floating cards. */
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.15rem 1.1rem 1.25rem;
+  background: var(--ground);
+}
+
+.statLabel {
+  order: 2;
+  color: var(--ink-dim);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.statValue {
+  order: 1;
+  font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.3rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.statNote {
+  order: 3;
+  margin-top: 0.15rem;
+  color: var(--ink-mute);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 30rem) {
+  .actions > * {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}

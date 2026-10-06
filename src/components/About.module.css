@@ -1,0 +1,76 @@
+.prose {
+  max-width: var(--measure);
+  color: var(--ink-dim);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.intro {
+  margin-bottom: 2.25rem;
+}
+
+/* ---------------------------------------------------------------- routes - */
+
+.routes {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.route {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+  padding: 1rem 0.25rem;
+  border-bottom: 1px solid var(--line);
+  transition: background 150ms var(--ease-snap);
+}
+
+.route:hover {
+  background: var(--panel);
+  /* A negative inline margin lets the hover fill the full width without
+     changing the layout. */
+  margin-inline: -0.75rem;
+  padding-inline: 1rem;
+}
+
+.routeValue {
+  font-size: 0.95rem;
+  color: var(--ink);
+  word-break: break-word;
+}
+
+.routeValue .readout {
+  font-size: 0.9rem;
+}
+
+.routeTag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--power);
+}
+
+.colophon {
+  margin-top: 3rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-mute);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 40rem) {
+  .route {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.2rem;
+  }
+
+  .route:hover {
+    margin-inline: 0;
+    padding-inline: 0.25rem;
+  }
+}

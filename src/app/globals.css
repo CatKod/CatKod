@@ -1,0 +1,390 @@
+/* =========================================================================
+   Station Console — design tokens
+   -------------------------------------------------------------------------
+   Every colour here is semantic, borrowed from how real power equipment is
+   marked (IEC 60417 safety markings + HMI conventions), not picked to look
+   pretty. Amber means power. Green means the machine is running. Red means
+   the machine has decided it is not safe. Nothing is decorative.
+   ========================================================================= */
+
+:root {
+  /* --- Surfaces: instrument bezel → module face → raised module --------- */
+  --ground: #0b0d10;
+  --panel: #141821;
+  --panel-raised: #1b2130;
+  --inset: #090b0e;
+
+  /* --- Ink ------------------------------------------------------------- */
+  --ink: #e9ecf1;
+  --ink-dim: #a3adbb;
+  --ink-mute: #6b7683;
+
+  /* --- Rules & lines --------------------------------------------------- */
+  --line: #242b38;
+  --line-strong: #333d4e;
+
+  /* --- Semantic state (the point of the palette) ----------------------- */
+  --power: #f2b632; /* energy on the bus */
+  --run: #3dd68c; /* healthy / RUN */
+  --fault: #e5484d; /* SAFE / faulted */
+  --idle: #4a5567; /* idle gun, no load */
+
+  /* --- Type ------------------------------------------------------------ */
+  --font-display: var(--font-archivo), 'Arial Narrow', sans-serif;
+  --font-body: var(--font-plex-sans), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  /* --- Layout ---------------------------------------------------------- */
+  --rail: 22rem; /* the persistent console pane */
+  --measure: 68ch;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --section-gap: clamp(4.5rem, 11vh, 9rem);
+
+  /* --- Motion ---------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-snap: cubic-bezier(0.77, 0, 0.175, 1);
+
+  /* --- Hairline grid, used to imply structure not decoration ----------- */
+  --hairline: rgba(255, 255, 255, 0.045);
+}
+
+/* =========================================================================
+   Reset
+   ========================================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  /* Anchor jumps must clear the sticky mobile console strip. */
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: clamp(0.975rem, 0.94rem + 0.18vw, 1.0625rem);
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Visible keyboard focus everywhere. Never removed. */
+:focus-visible {
+  outline: 2px solid var(--power);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+::selection {
+  background: var(--power);
+  color: var(--inset);
+}
+
+/* =========================================================================
+   Typography primitives
+   ========================================================================= */
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
+/* Section headings are signposted, not shouted. */
+.h-section {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 1.1rem + 1.5vw, 2.15rem);
+  letter-spacing: -0.022em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+/* Mono is used as a *label of a quantity*, not decoration. */
+.readout {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.prose p + p {
+  margin-top: 1.1em;
+}
+
+.prose a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 160ms var(--ease-snap);
+}
+
+.prose a:hover {
+  text-decoration-color: var(--power);
+}
+
+.lede {
+  color: var(--ink-dim);
+  max-width: 58ch;
+  font-size: clamp(1.02rem, 0.98rem + 0.3vw, 1.16rem);
+  line-height: 1.62;
+}
+
+/* =========================================================================
+   Layout shell — the permanent two-pane split
+   ========================================================================= */
+
+.shell {
+  display: grid;
+  grid-template-columns: var(--rail) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+/* The console pane never scrolls; the narrative column does. */
+.rail {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-right: 1px solid var(--line);
+  background: var(--inset);
+  display: flex;
+  flex-direction: column;
+}
+
+.column {
+  min-width: 0;
+  padding: 0 var(--gutter) var(--section-gap);
+}
+
+/* Below the split the two panes stack. The rail becomes a compact sticky
+   strip defined in ConsoleRail.module.css — the pane loses permanence
+   because the viewport no longer has room for it. */
+@media (max-width: 68rem) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rail {
+    height: auto;
+    overflow: visible;
+    border-right: 0;
+  }
+}
+
+/* Sections are separated by a hairline, never by a filled band. */
+.section {
+  padding-top: var(--section-gap);
+  scroll-margin-top: 2rem;
+}
+
+.section + .section {
+  border-top: 1px solid var(--hairline);
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+/* The rule after a section heading is structural: it ties the heading to
+   the content that follows and fills the remaining width. */
+.section-head::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+  transform: translateY(-0.3em);
+}
+
+/* =========================================================================
+   Skip link
+   ========================================================================= */
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--power);
+  color: var(--inset);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transform: translateY(-160%);
+  transition: transform 140ms var(--ease-snap);
+}
+
+.skip:focus-visible {
+  transform: translateY(0);
+}
+
+/* =========================================================================
+   Touch targets
+   -------------------------------------------------------------------------
+   WCAG 2.5.8 (AA) asks for 24x24 CSS px on a touch device. Several of this
+   page's links are inline text inside a paragraph or a table cell, where
+   padding would break the line rhythm, so the hit area is grown with an
+   absolutely-positioned pseudo-element instead. The glyphs keep their exact
+   type size; only the tappable region changes.
+   ========================================================================= */
+
+@media (pointer: coarse) {
+  /* Inline prose links and table-cell links. An empty ::after is safe to lay
+     over the text: it paints nothing and inherits no pointer behaviour of
+     its own, and being the last child it sits on top for hit-testing. */
+  a[href^='http']:not([class]),
+  .mail {
+    position: relative;
+  }
+
+  a[href^='http']:not([class])::after,
+  .mail::after {
+    content: '';
+    position: absolute;
+    inset: -0.6rem -0.5rem;
+  }
+}
+
+/* =========================================================================
+   Reveal on view
+   -------------------------------------------------------------------------
+   A small, shared class for the IntersectionObserver-driven entrance
+   animations. Three rules, one transition, one keyframe. Anything more
+   elaborate belongs in the component module that needs it.
+
+   The class contract:
+     .reveal         — start hidden + 12px down
+     .reveal.in      — visible, settled
+   The hook adds `.in` exactly once when the element enters the viewport,
+   so a reader who scrolls back up does not see the entrance replay.
+   ========================================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 640ms var(--ease-out),
+    transform 640ms var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger children of a group without re-implementing the hook per child.
+   The selector targets the *direct* children, not just elements that opt
+   into the `.reveal` class — that way a parent can wrap a list in
+   `<Reveal stagger>` without having to decorate every child.
+   5 children is enough for every list on the page; the 6th onwards
+   simply inherits the 5th's delay. */
+.reveal-stagger > *:nth-child(1) {
+  --reveal-delay: 0ms;
+}
+.reveal-stagger > *:nth-child(2) {
+  --reveal-delay: calc(var(--reveal-stagger-step, 60ms) * 1);
+}
+.reveal-stagger > *:nth-child(3) {
+  --reveal-delay: calc(var(--reveal-stagger-step, 60ms) * 2);
+}
+.reveal-stagger > *:nth-child(4) {
+  --reveal-delay: calc(var(--reveal-stagger-step, 60ms) * 3);
+}
+.reveal-stagger > *:nth-child(5),
+.reveal-stagger > *:nth-child(n + 6) {
+  --reveal-delay: calc(var(--reveal-stagger-step, 60ms) * 4);
+}
+
+/* Children of a staggered group also need the entrance state. The
+   reveal-stagger class flips all of its direct children together. */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 560ms var(--ease-out),
+    transform 560ms var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-stagger.in > * {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =========================================================================
+   Reduced motion — hard stop, not a soft reduction.
+   The 3D scene and the canvas diagram are removed in JS too (media query
+   in the component), so no motion is ever running off-screen.
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

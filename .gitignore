@@ -7,3 +7,28 @@ _README_old_backup.md
 
 # Execution checklist - local reference only
 REBRAND-CHECKLIST.md
+
+# Agent skills installed by claude-code-templates CLI (local tooling, not site content)
+.claude/
+node_modules
+.cursor/
+
+# Next.js build output and local caches
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Staging directory used to serve the export at /CatKod for local testing.
+# The published site is served from the repository root, so this is scratch.
+verify/
+
+# Screenshots captured while iterating on the design. Local QA only.
+shots/
+
+# Playwright MCP scratch output
+.playwright-mcp/
+
+# OS noise
+.DS_Store
+Thumbs.db
