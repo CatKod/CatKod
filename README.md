@@ -209,13 +209,13 @@ I also maintain a personal **hardware notebook** — schematics, pinouts, datash
 ## 🏆 GitHub Trophies
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=CatKod&theme=tokyonight&no-frame=true&row=1&column=7" alt="GitHub Trophies"/>
+  <img src="https://github-trophies.vercel.app/?username=CatKod&theme=tokyonight&no-frame=true&row=1&column=7" alt="GitHub Trophies"/>
 </div>
 
 ## 📈 Activity Graph
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=CatKod&theme=tokyo-night&hide_border=true&width=800" alt="Activity Graph"/>
+  <img src="https://jeskei-readme-activity-graph.vercel.app/graph?username=CatKod&theme=tokyo-night&hide_border=true&width=800" alt="Activity Graph"/>
 </div>
 
 ---
