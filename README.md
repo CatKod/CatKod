@@ -49,7 +49,7 @@ My AI background is formal, not just self-taught: a **Machine Learning Specializ
 
 ![MQTT](https://img.shields.io/badge/MQTT-660066?style=for-the-badge&logo=mqtt&logoColor=white)
 ![UART](https://img.shields.io/badge/UART%20%2F%20RS485%20%2F%20Modbus-00599C?style=for-the-badge&logo=serial&logoColor=white)
-![ESP32](https://img.shields.io/badge/Wi-Fi%20Provisioning-4B8B3B?style=for-the-badge&logo=wifi&logoColor=white)
+![Wi-Fi Provisioning](https://img.shields.io/badge/Wi--Fi%20Provisioning-4B8B3B?style=for-the-badge&logo=wifi&logoColor=white)
 ![OCPP](https://img.shields.io/badge/OCPP-1D6A42?style=for-the-badge&logo=lightning&logoColor=white)
 ![FATFS](https://img.shields.io/badge/USB%20Host%20%2B%20FATFS-00599C?style=for-the-badge&logo=usb&logoColor=white)
 
@@ -209,7 +209,7 @@ I also maintain a personal **hardware notebook** — schematics, pinouts, datash
 ## 🏆 GitHub Trophies
 
 <div align="center">
-  <img src="github-profile-trophy.vercel.app/?username=CatKod&theme=tokyonight&no-frame=true&row=1&column=7" alt="GitHub Trophies"/>
+  <img src="https://github-profile-trophy.vercel.app/?username=CatKod&theme=tokyonight&no-frame=true&row=1&column=7" alt="GitHub Trophies"/>
 </div>
 
 ## 📈 Activity Graph
