@@ -6,6 +6,10 @@
 
 `STM32H7` `CAN / FDCAN` `MISRA C:2012` `State Machines` `ESP32 / ESP-IDF` `MQTT` `Edge AI on MCU`
 
+[![Website](https://img.shields.io/badge/Portfolio-catkod.github.io-4A9EFF?style=flat-square&logo=googlechrome&logoColor=white)](https://catkod.github.io/)
+[![CV](https://img.shields.io/badge/CV%20(PDF)-E5484D?style=flat-square&logo=readdotcv&logoColor=white)](https://catkod.github.io/pdf/CV_Hoang-Kim-Vinh_2026.pdf)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/CatKod)
+
 </div>
 
 ---
@@ -234,7 +238,8 @@ I also maintain a personal **hardware notebook** — schematics, pinouts, datash
 
 <div align="center">
 
-[![Website](https://img.shields.io/badge/Website-4A9EFF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://catkod.github.io/CatKod/)
+[![Website](https://img.shields.io/badge/Website-4A9EFF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://catkod.github.io/)
+[![CV](https://img.shields.io/badge/CV%20(PDF)-E5484D?style=for-the-badge&logo=readdotcv&logoColor=white)](https://catkod.github.io/pdf/CV_Hoang-Kim-Vinh_2026.pdf)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kim-v%C4%A9nh-ho%C3%A0ng-9a306935a/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kimvinhh6@gmail.com)
 [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://web.facebook.com/HoangKiVinh)

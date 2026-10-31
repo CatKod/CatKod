@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hoàng Kim Vĩnh — Embedded Firmware Engineer CV</title>
+<style>
+    :root {
+      --bg: #0d1117;
+      --bg-soft: #161b22;
+      --bg-card: #1c2230;
+      --border: #2b3441;
+      --text: #e6edf3;
+      --text-dim: #9aa7b4;
+      --text-mute: #6e7b8a;
+      --accent: #4a9eff;
+      --green: #3fb950;
+      --amber: #d29922;
+
+      --font-sans: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      line-height: 1.48;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      hyphens: none;
+      white-space: normal;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Container: CSS Grid page desktop (>= 900px) */
+    .cv-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    /* Typography & badges */
+    .mono {
+      font-family: var(--font-mono);
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 2px;
+    }
+
+    .section-title {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.67rem;
+      font-weight: 500;
+      padding: 1px 7px;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+
+    .badge-amber {
+      background: rgba(210, 153, 34, 0.12);
+      border-color: var(--amber);
+      color: var(--amber);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-blue {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px 5px;
+      margin-top: 3px;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+
+    /* 3.1 Header block: full width across both columns */
+    .header-card {
+      grid-column: 1 / -1;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .header-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .header-name {
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      line-height: 1.15;
+    }
+
+    .header-role {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-top: 1px;
+    }
+
+    .header-tagline {
+      font-size: 0.78rem;
+      line-height: 1.42;
+      color: var(--text-dim);
+    }
+
+    .header-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px 10px;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      margin-top: 1px;
+      padding-top: 4px;
+      border-top: 1px solid var(--border);
+    }
+
+    .header-contacts span, .header-contacts a {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .header-contacts .sep {
+      color: var(--border);
+      margin: 0 3px;
+    }
+
+    .header-target {
+      font-size: 0.74rem;
+      font-weight: 500;
+      color: var(--text);
+      background: rgba(74, 158, 255, 0.08);
+      border: 1px solid rgba(74, 158, 255, 0.25);
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-top: 1px;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .photo-frame {
+      width: 76px;
+      height: 92px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: var(--bg-soft);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Columns */
+    .col-left, .col-right {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* 3.2 Profile summary */
+    .profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .profile-card p {
+      font-size: 0.76rem;
+      line-height: 1.42;
+      color: var(--text-dim);
+    }
+
+    /* 3.3 Stat row (4 figures across in left column on desktop) */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .stat-num {
+      font-family: var(--font-mono);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.25;
+    }
+
+    .stat-note {
+      font-size: 0.63rem;
+      color: var(--text-dim);
+      line-height: 1.25;
+    }
+
+    /* 3.4 Industrial Experience (NDA) - visually prominent, full left col */
+    .nda-section {
+      background: var(--bg-card);
+      border: 1.5px solid var(--amber);
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      position: relative;
+    }
+
+    .nda-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 5px;
+    }
+
+    .nda-disclaimer {
+      font-size: 0.74rem;
+      line-height: 1.4;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    .nda-block {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding-top: 2px;
+    }
+
+    .nda-block:not(:first-child) {
+      border-top: 1px dashed var(--border);
+      padding-top: 6px;
+    }
+
+    .nda-subhead {
+      font-family: var(--font-mono);
+      font-size: 0.69rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .nda-block-title {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .nda-summary {
+      font-size: 0.75rem;
+      line-height: 1.4;
+      color: var(--text-dim);
+    }
+
+    /* NDA 2-column bullets */
+    .bullet-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 10px;
+      margin-top: 1px;
+    }
+
+    .bullet-list li {
+      font-size: 0.73rem;
+      line-height: 1.38;
+      color: var(--text-dim);
+      position: relative;
+      padding-left: 11px;
+    }
+
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.78rem;
+      line-height: 1.3;
+    }
+
+    .bullet-list li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    /* Project Cards inside Selected Work */
+    .project-card {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 7px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .project-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .project-sub {
+      font-family: var(--font-mono);
+      font-size: 0.67rem;
+      color: var(--accent);
+    }
+
+    .project-desc {
+      font-size: 0.73rem;
+      line-height: 1.38;
+      color: var(--text-dim);
+    }
+
+    .project-callout {
+      font-size: 0.7rem;
+      line-height: 1.35;
+      color: var(--text);
+      border-left: 2px solid var(--accent);
+      padding-left: 6px;
+      background: rgba(74, 158, 255, 0.05);
+      border-radius: 0 4px 4px 0;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      font-style: italic;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-top: 1px;
+    }
+
+    .project-outcome {
+      font-size: 0.68rem;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-weight: 500;
+    }
+
+    .project-link {
+      font-size: 0.67rem;
+      font-family: var(--font-mono);
+    }
+
+    /* Table: More Work */
+    .table-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .compact-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.7rem;
+    }
+
+    .compact-table th {
+      text-align: left;
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--border);
+      padding: 2px 4px 4px;
+    }
+
+    .compact-table td {
+      padding: 3px 4px;
+      border-bottom: 1px solid rgba(43, 52, 65, 0.45);
+      vertical-align: top;
+      color: var(--text-dim);
+      line-height: 1.32;
+    }
+
+    .compact-table td.proj-cell {
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .skill-block {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 8px;
+    }
+
+    .skill-title {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1px;
+    }
+
+    .skill-items {
+      font-size: 0.69rem;
+      line-height: 1.38;
+      color: var(--text-dim);
+    }
+
+    /* Certifications */
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .cert-item {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .cert-title-line {
+      font-size: 0.72rem;
+      color: var(--text);
+    }
+
+    .cert-title-line strong {
+      color: var(--text);
+    }
+
+    .cert-sub-list {
+      list-style: none;
+      padding-left: 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      margin-top: 1px;
+    }
+
+    .cert-sub-list li {
+      font-size: 0.67rem;
+      color: var(--text-dim);
+      position: relative;
+    }
+
+    .cert-sub-list li::before {
+      content: "–";
+      position: absolute;
+      left: -8px;
+      color: var(--accent);
+    }
+
+    /* Closing line */
+    .closing-block {
+      text-align: center;
+      padding: 6px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .closing-quote {
+      font-size: 0.78rem;
+      color: var(--text-mute);
+      font-style: italic;
+    }
+
+    .closing-target {
+      font-size: 0.78rem;
+      color: var(--text-mute);
+      font-weight: 500;
+    }
+
+    /* Mobile Responsive breakpoint (< 900px) */
+    @media screen and (max-width: 899px) {
+      .cv-container {
+        grid-template-columns: 1fr;
+        padding: 12px 10px;
+        gap: 8px;
+      }
+
+      .header-card {
+        flex-direction: column-reverse;
+        text-align: center;
+        align-items: center;
+      }
+
+      .header-contacts {
+        justify-content: center;
+      }
+
+      .header-target {
+        margin: 0 auto;
+      }
+
+      .photo-frame {
+        width: 80px;
+        height: 100px;
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nda-section .bullet-list {
+        grid-template-columns: 1fr;
+      }
+
+      .compact-table td.proj-cell {
+        white-space: normal;
+      }
+
+      .compact-table,
+      .compact-table thead,
+      .compact-table tbody,
+      .compact-table th,
+      .compact-table tr,
+      .compact-table td {
+        display: block;
+      }
+
+      .compact-table thead {
+        display: none;
+      }
+
+      .compact-table tr {
+        margin-bottom: 6px;
+        padding: 5px 8px;
+        background: var(--bg-soft);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+      }
+
+      .compact-table tr:last-child {
+        margin-bottom: 0;
+      }
+
+      .compact-table td {
+        padding: 2px 0;
+        border-bottom: none;
+      }
+
+      .compact-table td.proj-cell {
+        font-size: 0.76rem;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+    }
+
+    /* Print styles: strictly single-page A4 */
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    @media print {
+      :root, html, body {
+        --bg: #ffffff;
+        --bg-soft: #eef1f5;
+        --bg-card: #f4f6f9;
+        --border: #c8d0da;
+        --text: #111820;
+        --text-dim: #3f4a57;
+        --text-mute: #5b6673;
+        --accent: #1552c4;
+        --green: #1a7f37;
+        --amber: #8a5a00;
+      }
+
+      html, body {
+        width: 210mm;
+        height: 297mm;
+        max-height: 297mm;
+        margin: 0;
+        padding: 0;
+        background: #ffffff !important;
+        color: #111820 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        overflow: hidden;
+      }
+
+      .cv-container {
+        width: 210mm;
+        box-sizing: border-box;
+        padding: 3mm 4.5mm 2.5mm 4.5mm;
+        margin: 0 auto;
+        gap: 3px;
+        grid-template-columns: 1.10fr 0.90fr;
+        zoom: 0.82;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+      }
+
+      .nda-section {
+        background: #fdf6e3 !important;
+        border-color: var(--amber) !important;
+      }
+
+      .badge-amber {
+        background: #fcefd0 !important;
+        border-color: var(--amber) !important;
+        color: var(--amber) !important;
+      }
+
+      .badge-blue {
+        background: #edf4fe !important;
+        border-color: var(--accent) !important;
+        color: var(--accent) !important;
+      }
+
+      .header-target {
+        background: #edf4fe !important;
+        border-color: #b9d5fb !important;
+        color: var(--text) !important;
+      }
+
+      .project-callout {
+        background: #edf4fe !important;
+        border-left-color: var(--accent) !important;
+      }
+
+      .compact-table td {
+        border-bottom: 1px solid var(--border) !important;
+      }
+
+      .col-left {
+        gap: 3.5px;
+      }
+
+      .col-right {
+        gap: 2.5px;
+      }
+
+      .header-card {
+        padding: 4px 8px;
+        gap: 10px;
+      }
+
+      .header-name {
+        font-size: 1.25rem;
+        line-height: 1.1;
+      }
+
+      .header-role {
+        font-size: 0.74rem;
+      }
+
+      .header-tagline {
+        font-size: 0.60rem;
+        line-height: 1.25;
+      }
+
+      .header-contacts {
+        font-size: 0.56rem;
+        gap: 1px 6px;
+        padding-top: 2px;
+      }
+
+      .header-target {
+        font-size: 0.58rem;
+        padding: 1px 6px;
+      }
+
+      .photo-frame {
+        width: 52px;
+        height: 66px;
+      }
+
+      .profile-card {
+        padding: 3.5px 6px;
+        gap: 2px;
+      }
+
+      .profile-card p {
+        font-size: 0.62rem;
+        line-height: 1.28;
+      }
+
+      .stat-grid {
+        gap: 2.5px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-card {
+        padding: 2.5px 5px;
+        gap: 0;
+      }
+
+      .stat-num {
+        font-size: 0.95rem;
+        line-height: 1.05;
+      }
+
+      .stat-label {
+        font-size: 0.56rem;
+        line-height: 1.14;
+      }
+
+      .stat-note {
+        font-size: 0.52rem;
+        line-height: 1.14;
+      }
+
+      .nda-section {
+        padding: 4px 6px;
+        gap: 2.5px;
+      }
+
+      .nda-header {
+        padding-bottom: 2px;
+      }
+
+      .nda-disclaimer {
+        font-size: 0.58rem;
+        line-height: 1.22;
+      }
+
+      .nda-block {
+        gap: 1px;
+      }
+
+      .nda-block:not(:first-child) {
+        padding-top: 2px;
+      }
+
+      .nda-block-title {
+        font-size: 0.67rem;
+      }
+
+      .nda-subhead {
+        font-size: 0.57rem;
+      }
+
+      .nda-summary {
+        font-size: 0.59rem;
+        line-height: 1.23;
+      }
+
+      .bullet-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px 6px;
+      }
+
+      .bullet-list li {
+        font-size: 0.58rem;
+        line-height: 1.22;
+        padding-left: 8px;
+      }
+
+      .bullet-list li::before {
+        font-size: 0.65rem;
+      }
+
+      .section-card {
+        padding: 2.5px 5px;
+        gap: 1.5px;
+      }
+
+      .section-title {
+        font-size: 0.72rem !important;
+      }
+
+      .eyebrow {
+        font-size: 0.55rem;
+      }
+
+      .badge {
+        font-size: 0.54rem;
+        padding: 0 4px;
+      }
+
+      .tag-cloud {
+        gap: 1.5px 3px;
+        margin-top: 1px;
+      }
+
+      .tag {
+        font-size: 0.54rem;
+        padding: 0 3px;
+      }
+
+      .project-card {
+        padding: 2px 4px;
+        gap: 1px;
+      }
+
+      .project-title {
+        font-size: 0.66rem;
+      }
+
+      .project-sub {
+        font-size: 0.55rem;
+      }
+
+      .project-desc {
+        font-size: 0.57rem;
+        line-height: 1.20;
+      }
+
+      .project-callout {
+        font-size: 0.55rem;
+        line-height: 1.18;
+        padding: 1px 3px;
+      }
+
+      .project-meta {
+        gap: 0;
+        margin-top: 1px;
+      }
+
+      .project-outcome {
+        font-size: 0.55rem;
+      }
+
+      .project-link {
+        font-size: 0.54rem;
+      }
+
+      .table-card {
+        padding: 2.5px 4px;
+        gap: 1px;
+      }
+
+      .compact-table {
+        font-size: 0.55rem;
+      }
+
+      .compact-table th {
+        font-size: 0.52rem;
+        padding: 1px 2px;
+      }
+
+      .compact-table td {
+        padding: 1px 2px;
+        line-height: 1.16;
+      }
+
+      .skills-grid {
+        gap: 1.5px;
+      }
+
+      .skill-block {
+        padding: 1.5px 3.5px;
+      }
+
+      .skill-title {
+        font-size: 0.60rem;
+        margin-bottom: 0;
+      }
+
+      .skill-items {
+        font-size: 0.55rem;
+        line-height: 1.18;
+      }
+
+      .cert-list {
+        gap: 1.5px;
+      }
+
+      .cert-item {
+        padding: 1.5px 3px;
+        gap: 0;
+      }
+
+      .cert-title-line {
+        font-size: 0.56rem;
+        line-height: 1.16;
+      }
+
+      .cert-sub-list {
+        padding-left: 8px;
+        gap: 0;
+      }
+
+      .cert-sub-list li {
+        font-size: 0.53rem;
+        line-height: 1.14;
+      }
+
+      .closing-block {
+        padding: 1.5px 3px;
+        gap: 0;
+      }
+
+      .closing-quote {
+        font-size: 0.58rem;
+      }
+
+      .closing-target {
+        font-size: 0.58rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="cv-container">
+<!-- 3.1 Header block -->
+<header class="header-card">
+<div class="header-main">
+<div>
+<h1 class="header-name">Hoàng Kim Vĩnh</h1>
+<div class="header-role">Embedded Firmware Engineer</div>
+</div>
+<p class="header-tagline">
+          Embedded Firmware Engineer working on commercial DC fast-charging firmware — CAN bus, MISRA C compliance, non-blocking state machines on STM32H7 — and building complete IoT products from PCB to mobile app.
+        </p>
+<div class="header-contacts mono">
+<span><a href="mailto:kimvinhh6@gmail.com">kimvinhh6@gmail.com</a></span>
+<span class="sep">/</span>
+<span>Hanoi, Vietnam · Timezone GMT+7</span>
+<span class="sep">/</span>
+<span><a href="https://catkod.github.io/">catkod.github.io</a></span>
+<span class="sep">/</span>
+<span><a href="https://github.com/CatKod">github.com/CatKod</a></span>
+<span class="sep">/</span>
+<span><a href="https://www.linkedin.com/in/kim-v%C3%A9nh-ho%C3%A0ng-9a306935a/">LinkedIn</a></span>
+<span class="sep">/</span>
+<span><a href="https://web.facebook.com/HoangKiVinh">HoangKiVinh</a></span>
+<span class="sep">/</span>
+<span>Student ID: HUST 20235876</span>
+<span class="sep">/</span>
+<span>Institution: Hanoi University of Science and Technology</span>
+</div>
+<div class="header-target">
+          Open to full-time Embedded / IoT roles, ideally in Japan. JLPT N3.
+        </div>
+</div>
+<div class="photo-frame">
+<img alt="Hoàng Kim Vĩnh" src="photo.jpg"/>
+</div>
+</header>
+<!-- Left Column: Profile, Stat row, Industrial Experience (NDA) -->
+<div class="col-left">
+<!-- 3.2 Profile / summary paragraph -->
+<section class="profile-card">
+<div class="eyebrow">Profile</div>
+<p>
+            I am a final-year Information Technology student at Hanoi University of Science and Technology. Most of my firmware work happens at APES Lab, where I contribute to a commercial DC fast-charging station developed with a partner manufacturer. The code is under NDA, but the technical scope is what I do every day.
+          </p>
+<p>
+            My AI background is formal rather than self-taught: a Machine Learning Specialization (DeepLearning.AI × Stanford) and a Deep Learning Specialization. That foundation is what lets me run models on-device — YOLOv11n for vehicle damage assessment, and a Vietnamese voice-command classifier that runs entirely on an ESP32-P4 with no cloud dependency.
+          </p>
+<p>
+            Since my first year I have led or co-led every team project I have been part of. I also keep a personal hardware notebook — schematics, pinouts, datasheets and wiring notes for every board I have touched — so the next time that hardware comes up I am not starting from zero.
+          </p>
+</section>
+<!-- 3.3 Four key figures (stat row) -->
+<section class="stat-grid">
+<div class="stat-card">
+<div class="stat-num">32</div>
+<div class="stat-label">charging guns per power-sharing network</div>
+<div class="stat-note mono">16 cabinets × 2 channels, closed CAN ring</div>
+</div>
+<div class="stat-card">
+<div class="stat-num">11</div>
+<div class="stat-label">firmware modules, SPI-to-CAN to power algorithms</div>
+<div class="stat-note mono">4-layer architecture, upward-only calls</div>
+</div>
+<div class="stat-card">
+<div class="stat-num">89</div>
+<div class="stat-label">host unit tests passing under -Werror</div>
+<div class="stat-note mono">CI on both gcc and clang</div>
+</div>
+<div class="stat-card">
+<div class="stat-num">10/10</div>
+<div class="stat-label">capstone grade as team lead</div>
+<div class="stat-note mono">University capstone, graded 10/10</div>
+</div>
+</section>
+<!-- 3.4 Industrial Experience (NDA) — the most important section -->
+<section class="nda-section">
+<div class="nda-header">
+<div class="section-title">
+<span>Industrial Experience</span>
+</div>
+<span class="badge badge-amber">NDA — code not public</span>
+</div>
+<p class="nda-disclaimer">
+            This work is under a non-disclosure agreement, so there is no code and no repository. What follows is the technical scope I am responsible for, described precisely enough to be useful and vague enough to stay legal.
+          </p>
+<!-- A -->
+<div class="nda-block">
+<div class="nda-block-title">A. DC fast-charging power-sharing network</div>
+<div class="nda-subhead">STM32H723 · CAN 2.0B 29-bit ring · MISRA C:2012</div>
+<p class="nda-summary">
+              A multi-gun DC charging network wired as a closed ring. When one vehicle demands more power than its own power module can deliver, the firmware autonomously borrows capacity from idle guns and reclaims it when the vehicle finishes or a new one arrives.
+            </p>
+<ul class="bullet-list">
+<li><strong>Four-layer architecture</strong> — Application → Middleware (Service / FSM / Control) → Driver → HAL, with upward-only calls enforced. Drivers hold no state machine and know nothing about the protocol above them.</li>
+<li><strong>SPI-to-CAN driver stack</strong> — MCP2515 over SPI, bit-timing solved for 125 kbit/s, frames buffered at ISR level, automatic bus-off recovery.</li>
+<li><strong>CAN frame codec</strong> — 29-bit IDs packed from six named fields with explicit shift/mask definitions, and a range check on every field before it is accepted.</li>
+<li><strong>Distributed power algorithms</strong> — Ring traversal by modulo, two-directional search for an idle gun, event-priority reclamation, and a safe contactor open that ramps current to zero before the breaker releases.</li>
+<li><strong>Station state machine</strong> — INIT → DISCOVERY → RUN → SAFE, absolutely non-blocking. No HAL_Delay() anywhere in the control path; timing comes from a 1 ms soft-timer bank.</li>
+<li><strong>Single-writer ownership</strong> — Every shared variable has exactly one writing task, which removes data races by construction rather than by locking.</li>
+<li><strong>Quality pipeline</strong> — cppcheck with the MISRA addon, host unit tests against a mocked HAL, fault injection (welded contactor, unplugged CAN, dead current sensor), logic-analyser verification, and a 24-hour soak test.</li>
+</ul>
+<div class="tag-cloud">
+<span class="tag">STM32H723</span>
+<span class="tag">FDCAN</span>
+<span class="tag">CAN 2.0B 29-bit</span>
+<span class="tag">MCP2515 over SPI</span>
+<span class="tag">MISRA C:2012</span>
+<span class="tag">cppcheck</span>
+<span class="tag">Unity</span>
+<span class="tag">bootloader / IAP</span>
+<span class="tag">USB Host</span>
+<span class="tag">FATFS</span>
+<span class="tag">OCPP</span>
+<span class="tag">GB/T 27930</span>
+<span class="tag">DLT-645</span>
+<span class="tag">WIZnet Ethernet</span>
+</div>
+</div>
+<!-- B -->
+<div class="nda-block">
+<div class="nda-block-title">B. Two-gun DC charger firmware</div>
+<div class="nda-subhead">STM32 · OCPP · GB/T 27930 · DLT-645</div>
+<ul class="bullet-list">
+<li><strong>Seven WIZnet Ethernet parts</strong> — One driver covering W5100, W5100S, W5200, W5300, W5500, W6100 and W6300.</li>
+<li><strong>Charging protocol stack</strong> — OCPP for charge-point management, GB/T 27930 for the vehicle side, DLT-645 for DC energy metering.</li>
+<li><strong>Bootloader and recovery paths</strong> — Firmware delivery over both USB and Ethernet, USB Host with FATFS for log export, RFID authorisation, insulation monitoring, and PT1000 temperature measurement.</li>
+</ul>
+<div class="tag-cloud">
+<span class="tag">OCPP</span>
+<span class="tag">GB/T 27930</span>
+<span class="tag">DLT-645</span>
+<span class="tag">WIZnet W5100–W6300</span>
+<span class="tag">USB Host</span>
+<span class="tag">FATFS</span>
+<span class="tag">IMD</span>
+<span class="tag">PT1000</span>
+</div>
+</div>
+<!-- C -->
+<div class="nda-block">
+<div class="nda-block-title">C. 6-axis robotic arm — motion programming</div>
+<div>
+<span class="badge badge-blue">Vendor platform · motion programs by me</span>
+</div>
+<p class="nda-summary" style="margin-top: 3px;">
+              The control software for this 6-axis industrial arm is provided by the manufacturer, so the software itself is not mine. What I write are the motion control programs that drive all six axes, in the vendor's PLC-style control language, on top of an OpenCV template-matching vision pipeline fed by an industrial GigE camera.
+            </p>
+</div>
+</section>
+<section class="section-card">
+<div class="eyebrow">Credentials</div>
+<h2 class="section-title" style="font-size: 0.95rem;">Certifications</h2>
+<div class="cert-list">
+<div class="cert-item">
+<div class="cert-title-line">
+<strong>Japanese Language Proficiency Test — N3</strong> — issuer Japan Foundation — link <a href="https://www.jlpt.jp/">jlpt.jp</a>
+</div>
+</div>
+<div class="cert-item">
+<div class="cert-title-line">
+<strong>Machine Learning Specialization</strong> — issuer DeepLearning.AI × Stanford University — period Apr – May 2025
+              </div>
+<ul class="cert-sub-list">
+<li>Supervised ML: Regression &amp; Classification</li>
+<li>Advanced Learning Algorithms</li>
+<li>Unsupervised Learning, Recommender Systems &amp; RL</li>
+<li>ML Capstone</li>
+</ul>
+</div>
+<div class="cert-item">
+<div class="cert-title-line">
+<strong>Deep Learning Specialization</strong> — issuer DeepLearning.AI — period Jul 2025
+              </div>
+<ul class="cert-sub-list">
+<li>Neural Networks and Deep Learning</li>
+</ul>
+</div>
+</div>
+</section><footer class="closing-block">
+<div class="closing-quote">
+        "Measure twice, cut once." — the short version of how I approach firmware, wiring, and deadlines alike.
+      </div>
+<div class="closing-target">
+        I'm targeting full-time Embedded / IoT roles, ideally in Japan. If you are hiring and this fits, I'd be glad to talk.
+      </div>
+</footer></div>
+<!-- Right Column: Selected Work, More Work, Technical Skills, Certifications, Closing block -->
+<div class="col-right">
+<!-- 3.5 Selected Work (public projects) -->
+<section class="section-card">
+<div class="eyebrow">Selected Work</div>
+<h2 class="section-title" style="font-size: 0.95rem;">Public Projects</h2>
+<!-- ① embedded-iot-toolkit -->
+<article class="project-card">
+<div class="project-header">
+<span class="project-title">① embedded-iot-toolkit</span>
+<span class="badge">Open source · MIT · 89 tests</span>
+</div>
+<div class="project-sub">Portable C99 · zero dependencies</div>
+<p class="project-desc">
+              A dependency-free C99 library of the firmware building blocks I keep rewriting: a non-blocking timer bank, an ISR-safe framed serial protocol with checksums and resynchronisation, a CAN 2.0B 29-bit codec with a bit-timing solver, and sensor decoders that report staleness instead of returning a stale value.
+            </p>
+<div class="project-callout">
+              This is the public evidence of the engineering discipline the commercial firmware has to keep under NDA — a reviewer can clone it and run the tests.
+            </div>
+<div class="tag-cloud">
+<span class="tag">C99</span>
+<span class="tag">CAN 2.0B</span>
+<span class="tag">MISRA C</span>
+<span class="tag">cppcheck</span>
+<span class="tag">Unity</span>
+<span class="tag">zero dependencies</span>
+</div>
+<div class="project-meta">
+<div class="project-outcome">Outcome: 89 host unit tests passing under -Werror on gcc and clang</div>
+<div class="project-link"><a href="https://github.com/CatKod/embedded-iot-toolkit">github.com/CatKod/embedded-iot-toolkit</a></div>
+</div>
+</article>
+<!-- ② SmartHome -->
+<article class="project-card">
+<div class="project-header">
+<span class="project-title">② SmartHome</span>
+<span class="badge">University capstone · 10/10</span>
+</div>
+<div class="project-sub">STM32H7 + ESP32-S3 · TouchGFX · RFID · MQTT</div>
+<p class="project-desc">
+              A two-tier architecture where the real-time MCU never depends on the cloud for safety. The ESP32-S3 handles Wi-Fi and MQTT; the STM32H7 owns the hardware. RFID and PIN entry, a shift-register LED bus, environmental sensors and an automatic window actuator.
+            </p>
+<div class="project-callout">
+              MQTT and the dashboard can never drive hardware directly. Every command is validated by the STM32H7 before an actuator moves.
+            </div>
+<div class="tag-cloud">
+<span class="tag">STM32H7</span>
+<span class="tag">ESP32-S3</span>
+<span class="tag">ESP-IDF</span>
+<span class="tag">TouchGFX</span>
+<span class="tag">FreeRTOS</span>
+<span class="tag">MQTT</span>
+<span class="tag">RFID RC522</span>
+<span class="tag">74HC595</span>
+</div>
+<div class="project-meta">
+<div class="project-outcome">Outcome: Team lead · graded 10/10</div>
+<div class="project-link"><a href="https://github.com/CatKod/SmartHome">github.com/CatKod/SmartHome</a></div>
+</div>
+</article>
+<!-- ③ Smart Power Outlet -->
+<article class="project-card">
+<div class="project-header">
+<span class="project-title">③ Smart Power Outlet</span>
+<span class="badge">Graduation capstone · solo</span>
+</div>
+<div class="project-sub">EasyEDA PCB · ESP-IDF firmware · Flutter app</div>
+<p class="project-desc">
+              A complete IoT product rather than a board: the PCB was designed in EasyEDA Pro, the firmware is ESP-IDF with Wi-Fi provisioning so no credential is ever hardcoded, a PlatformIO build covers both ESP32 and ESP8266, and a cross-platform Flutter app drives it.
+            </p>
+<div class="tag-cloud">
+<span class="tag">ESP32</span>
+<span class="tag">ESP8266</span>
+<span class="tag">ESP-IDF</span>
+<span class="tag">PlatformIO</span>
+<span class="tag">Wi-Fi provisioning</span>
+<span class="tag">EasyEDA Pro</span>
+<span class="tag">Flutter</span>
+<span class="tag">Dart</span>
+</div>
+<div class="project-meta">
+<div class="project-outcome">Outcome: Solo · final-year capstone</div>
+<div class="project-link"><a href="https://github.com/CatKod/Smart_Power_Outlet">github.com/CatKod/Smart_Power_Outlet</a></div>
+</div>
+</article>
+<!-- ④ Sun-Car Damage Assessment -->
+<article class="project-card">
+<div class="project-header">
+<span class="project-title">④ Sun-Car Damage Assessment</span>
+<span class="badge">SUN scholarship project</span>
+</div>
+<div class="project-sub">YOLOv11n · ESP32-CAM → STM32 bridge · Edge AI</div>
+<p class="project-desc">
+              YOLOv11n for object detection, instance segmentation and severity scoring, built to apply for a SUN scholarship. An ESP32-CAM captures frames and streams the result to an STM32 over UART, so inference sits on the edge rather than in the cloud.
+            </p>
+<div class="tag-cloud">
+<span class="tag">YOLOv11n</span>
+<span class="tag">PyTorch</span>
+<span class="tag">Ultralytics</span>
+<span class="tag">ESP32-CAM</span>
+<span class="tag">STM32</span>
+<span class="tag">UART</span>
+<span class="tag">Flask</span>
+<span class="tag">Streamlit</span>
+</div>
+<div class="project-meta">
+<div class="project-link" style="margin-top: 1px;"><a href="https://github.com/CatKod/Sun-Car-Damage-AI-Assessment">github.com/CatKod/Sun-Car-Damage-AI-Assessment</a></div>
+</div>
+</article>
+</section>
+<!-- 3.6 More work — a compact table -->
+<section class="table-card">
+<div class="eyebrow">More Work</div>
+<table class="compact-table">
+<thead>
+<tr>
+<th style="width: 32%;">Project</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="proj-cell"><a href="https://github.com/CatKod/Yootek-IOT-intern">Yootek SmartGarden</a></td>
+<td>Enterprise internship — ESP32/ESP-IDF firmware with a NestJS + PostgreSQL + MQTT + WebSocket backend, JWT auth and role-based access control</td>
+</tr>
+<tr>
+<td class="proj-cell"><a href="https://github.com/CatKod/Attendance_Check">Attendance_Check</a></td>
+<td>A system actually running in production at a university lab — Next.js admin, Electron kiosk, Expo mobile app, Supabase</td>
+</tr>
+<tr>
+<td class="proj-cell"><a href="https://github.com/CatKod/AIoT-Face_And_Order">AIoT-Face_And_Order</a></td>
+<td>ESP32-CAM capture to an HTTP server running OpenCV face detection, with a live web stream</td>
+</tr>
+<tr>
+<td class="proj-cell"><a href="https://github.com/CatKod/SmartSlide_JP">SmartSlide_JP</a></td>
+<td>Smart projector control system, including presentation remote handling</td>
+</tr>
+</tbody>
+</table>
+</section>
+<!-- 3.7 Skills — six groups -->
+<section class="section-card">
+<div class="eyebrow">Expertise</div>
+<h2 class="section-title" style="font-size: 0.95rem;">Technical Skills</h2>
+<div class="skills-grid">
+<div class="skill-block">
+<div class="skill-title">Firmware &amp; embedded</div>
+<div class="skill-items">STM32H7 / STM32F4 · STM32Cube HAL · Bare-metal register work · CAN 2.0B 29-bit · FDCAN · SPI-to-CAN (MCP2515) · MISRA C:2012 · cppcheck · Hierarchical state machines · Non-blocking + soft timers · FreeRTOS · ESP-IDF · PlatformIO · Bootloader / IAP · USB Host · FATFS</div>
+</div>
+<div class="skill-block">
+<div class="skill-title">Protocols &amp; connectivity</div>
+<div class="skill-items">OCPP · GB/T 27930 · DLT-645 · MQTT — topic design, QoS, retain, LWT · UART / RS485 / Modbus · WIZnet Ethernet (W5100 → W6300) · Wi-Fi provisioning · Framed ASCII protocol with checksum + resync</div>
+</div>
+<div class="skill-block">
+<div class="skill-title">Hardware &amp; power</div>
+<div class="skill-items">EasyEDA Pro · Contactor, power module, current/voltage ramping · DHT · PIR · RFID RC522 · LDR · NTC · rain · 74HC595 shift register · PT1000 · Insulation monitoring (IMD) · Safe sequential switching · Logic analyser · Fault injection</div>
+</div>
+<div class="skill-block">
+<div class="skill-title">Embedded GUI</div>
+<div class="skill-items">TouchGFX on STM32H7 · LVGL on ESP32-P4 · EEZ Studio · MIPI-DSI — ST7701, ILI9881C · I/O expander PCA9536 · Layout and screen-state design</div>
+</div>
+<div class="skill-block">
+<div class="skill-title">Edge AI &amp; software</div>
+<div class="skill-items">YOLOv11n · PyTorch · On-device inference (decision tree, rule-based) · OpenCV · Python · FastAPI · Flask · TypeScript · NestJS · PostgreSQL · Prisma · WebSocket · Flutter · React</div>
+</div>
+<div class="skill-block">
+<div class="skill-title">Quality &amp; process</div>
+<div class="skill-items">Host unit tests for firmware against a mocked HAL · Enforced four-layer architecture · Single-writer ownership · Test bench and soak testing · Bus load and jitter measurement · Automated report generation (Python, Node.js) · Markdown → docx</div>
+</div>
+</div>
+</section>
+<!-- 3.8 Certifications -->
+
+<!-- 3.9 Closing line -->
+
+</div>
+</div>
+</body>
+</html>
