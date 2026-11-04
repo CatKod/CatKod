@@ -409,7 +409,7 @@ Yêu cầu: `grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))`, card 
 | Yootek-IOT-intern | Thực tập doanh nghiệp — ESP32/ESP-IDF + NestJS + PostgreSQL + MQTT + JWT/RBAC |
 | AIoT-Face_And_Order | ESP32-CAM → HTTP → OpenCV face detection |
 | Attendance_Check | Hệ thống chạy thật tại APES Lab — Next.js + Electron kiosk + Expo + Supabase |
-| SmartSlide_JP | Hệ thống điều khiển máy chiếu thông minh |
+| rokid-max-diy-station | Rokid Max AR glasses thành màn hình không gian — USB HID IMU + IddCx virtual display + Direct3D 11 |
 
 ---
 

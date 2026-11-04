@@ -41,6 +41,31 @@ export const featured: readonly Project[] = [
     featured: true,
   },
   {
+    id: 'rokid-max-diy-station',
+    title: 'rokid-max-diy-station',
+    badge: 'Released · MIT · 218 tests',
+    sub: 'C# / .NET 8 · Direct3D 11 · USB HID IMU · IddCx virtual display',
+    description:
+      'Turns Rokid Max AR glasses into a spatial Windows display. The glasses’ onboard IMU is read over USB HID and fused into a stable 3-DoF head pose with a Mahony filter; an IddCx indirect display driver creates a real virtual monitor, Windows.Graphics.Capture grabs its DWM-composed desktop, and Direct3D 11 re-projects it as a 3D-anchored quad on the Micro-OLED that stays where you put it.',
+    callout:
+      'The panel is a real Windows display, not a recorded video — the OS does the hit-testing, focus and input, so every application works and clicks land where you expect them.',
+    tech: [
+      'C#',
+      '.NET 8',
+      'Direct3D 11',
+      'WPF',
+      'USB HID',
+      'Windows Graphics Capture',
+      'IddCx',
+      'Mahony filter',
+      'FreeTrack',
+      'xUnit',
+    ],
+    href: 'https://github.com/CatKod/rokid-max-diy-station',
+    hrefLabel: 'github.com/CatKod/rokid-max-diy-station',
+    outcome: '218 xUnit tests passing · self-contained Windows release',
+  },
+  {
     id: 'smarthome',
     title: 'SmartHome',
     badge: 'University capstone · 10/10',
@@ -117,10 +142,5 @@ export const others: readonly {
     name: 'AIoT-Face_And_Order',
     shows: 'ESP32-CAM capture to an HTTP server running OpenCV face detection, with a live web stream',
     href: 'https://github.com/CatKod/AIoT-Face_And_Order',
-  },
-  {
-    name: 'SmartSlide_JP',
-    shows: 'Smart projector control system, including presentation remote handling',
-    href: 'https://github.com/CatKod/SmartSlide_JP',
   },
 ];

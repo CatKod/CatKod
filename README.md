@@ -101,6 +101,20 @@ My AI background is formal, not just self-taught: a **Machine Learning Specializ
 
 ## ⭐ Featured Projects
 
+### 🥽 [rokid-max-diy-station](https://github.com/CatKod/rokid-max-diy-station) — A Real Windows Desktop, Floating in the Air
+
+**Rokid Max AR glasses turned into a spatial display: a virtual Windows monitor that lives in the room, not on your eyeballs.**
+
+- **Sensor fusion** — the glasses' onboard IMU is read over **USB HID** (gyro / accel / magnetometer) and fused into a stable 3-DoF head pose with a **Mahony filter**
+- **Virtual display** — an **IddCx** indirect display driver creates a real monitor at negative coordinates; the OS does all the hit-testing, focus and z-order
+- **Capture & render** — **Windows.Graphics.Capture** grabs the DWM-composed desktop of that monitor, then **Direct3D 11** (flip-model swapchain, HLSL shaders) re-projects it as a 3D-anchored quad on the Micro-OLED
+- **Real input** — because the target is a genuine display, Windows delivers every click, wheel tick and keystroke natively; the 3D cursor is drawn in the scene as pure feedback
+- **Interop** — head pose is also streamed as **FreeTrack 2.x** UDP (port 5555), so OpenTrack and flight sims pick it up
+
+> 📌 Released under **MIT** with a **self-contained Windows build**, **218 passing xUnit tests** (73 app + 145 core), and a headless CLI + 20 verification tools for bench work.
+
+<br/>
+
 ### 🏠 [SmartHome](https://github.com/CatKod/SmartHome) — STM32H7 + ESP32-S3 Smart Home System
 
 **A two-tier architecture where a real-time MCU never depends on the cloud to stay safe.**
@@ -150,7 +164,6 @@ A complete IoT product built from the ground up, covering every layer:
 | [`Yootek-IOT-intern`](https://github.com/CatKod/Yootek-IOT-intern) | **Enterprise IoT internship** — SmartGarden: ESP32/ESP-IDF firmware + NestJS + PostgreSQL + Prisma + MQTT + WebSocket + JWT/RBAC |
 | [`AIoT-Face_And_Order`](https://github.com/CatKod/AIoT-Face_And_Order) | ESP32-CAM → HTTP → OpenCV face detection pipeline |
 | [`Attendance_Check`](https://github.com/CatKod/Attendance_Check) | Production system at APES Lab — Next.js admin + Electron kiosk + Expo + Supabase |
-| [`SmartSlide_JP`](https://github.com/CatKod/SmartSlide_JP) | Smart projector control system |
 
 ---
 
