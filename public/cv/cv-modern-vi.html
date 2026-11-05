@@ -55,12 +55,13 @@
       height: 297mm;
       background: #8C1418;
       color: #FFFFFF;
-      padding: 4.6mm 5.5mm 5.5mm 6mm;
+      padding: 5.2mm 5.5mm 6mm 6mm;
       display: flex;
       flex-direction: column;
       position: relative;
       border-right: 1px solid #6E0F12;
       z-index: 10;
+      justify-content: space-between;
     }
 
     /* Signal Rail PCB Trace (Decorative Flourish) */
@@ -80,7 +81,7 @@
       width: 100%;
       display: flex;
       justify-content: flex-start;
-      margin-bottom: 2.8mm;
+      margin-bottom: 4.2mm;
     }
     .rail-photo {
       width: 38mm;
@@ -93,14 +94,14 @@
 
     /* Rail Section Common */
     .rail-section {
-      margin-bottom: 2.1mm;
+      margin-bottom: 4.2mm;
       position: relative;
     }
     .rail-section-header {
       display: flex;
       align-items: center;
       gap: 5px;
-      margin-bottom: 1.0mm;
+      margin-bottom: 1.6mm;
     }
     .rail-section-title {
       font-size: 8.0pt;
@@ -120,7 +121,7 @@
     .contact-list {
       display: flex;
       flex-direction: column;
-      gap: 1.1mm;
+      gap: 1.7mm;
     }
     .contact-item {
       display: flex;
@@ -159,7 +160,7 @@
       font-size: 7.0pt;
       color: #E5BFC1;
       line-height: 1.2;
-      margin-bottom: 0.6mm;
+      margin-bottom: 1.0mm;
       display: flex;
       justify-content: space-between;
     }
@@ -171,7 +172,7 @@
 
     /* Skills Block */
     .skills-group {
-      margin-bottom: 1.3mm;
+      margin-bottom: 2.4mm;
     }
     .skills-group:last-child {
       margin-bottom: 0;
@@ -196,7 +197,7 @@
 
     /* Languages Block */
     .lang-item {
-      margin-bottom: 0.9mm;
+      margin-bottom: 1.7mm;
     }
     .lang-item:last-child {
       margin-bottom: 0;
@@ -207,46 +208,6 @@
       color: #FFFFFF;
       margin-bottom: 0.55mm;
       line-height: 1;
-    }
-
-    /* Status / Spec Sheet Block */
-    .status-panel {
-      background: #6E0F12;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 2px;
-      padding: 1.5mm 1.8mm;
-      display: flex;
-      flex-direction: column;
-      gap: 1.1mm;
-    }
-    .status-row {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-    }
-    .status-val {
-      font-size: 8.2pt;
-      font-weight: 700;
-      color: #FFFFFF;
-      min-width: 11.5mm;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      flex-shrink: 0;
-    }
-    .status-desc {
-      display: flex;
-      flex-direction: column;
-    }
-    .status-meaning {
-      font-size: 6.3pt;
-      font-weight: 600;
-      color: #FFFFFF;
-      line-height: 1.14;
-    }
-    .status-detail {
-      font-size: 5.8pt;
-      color: #E5BFC1;
-      line-height: 1.14;
     }
 
     /* ==========================================================================
@@ -658,44 +619,11 @@
         </div>
       </section>
 
-      <!-- Status / Telemetry Block -->
-      <section class="rail-section" style="margin-bottom: 0;">
-        <div class="rail-section-header">
-          <div class="rail-section-dot"></div>
-          <h2 class="rail-section-title">Thông số</h2>
-        </div>
-        <div class="status-panel">
-          <div class="status-row">
-            <span class="status-val mono">32</span>
-            <div class="status-desc">
-              <span class="status-meaning">súng sạc trên mạng chia sẻ công suất</span>
-              <span class="status-detail mono">16 tủ x 2 kênh, vòng CAN khép kín</span>
-            </div>
-          </div>
-          <div class="status-row">
-            <span class="status-val mono">11</span>
-            <div class="status-desc">
-              <span class="status-meaning">module firmware, từ SPI sang CAN đến thuật toán công suất</span>
-              <span class="status-detail mono">kiến trúc 4 tầng, chỉ gọi chiều lên</span>
-            </div>
-          </div>
-          <div class="status-row">
-            <span class="status-val mono">89</span>
-            <div class="status-desc">
-              <span class="status-meaning">bài kiểm thử đơn vị host đạt chuẩn -Werror</span>
-              <span class="status-detail mono">CI trên cả gcc và clang</span>
-            </div>
-          </div>
-          <div class="status-row">
-            <span class="status-val mono">10/10</span>
-            <div class="status-desc">
-              <span class="status-meaning">điểm đồ án tốt nghiệp với vai trò trưởng nhóm</span>
-              <span class="status-detail mono">Đồ án trường, đạt điểm 10/10</span>
-            </div>
-          </div>
-        </div>
-      </section>
     </aside>
+
+
+
+
 
     <!-- ====================================================================
          RIGHT CANVAS (WHITE SCHEMATIC CANVAS)
