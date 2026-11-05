@@ -6,7 +6,7 @@ export const about = [
   },
   {
     id: 'ai',
-    body: 'My AI background is formal rather than self-taught: a Machine Learning Specialization (DeepLearning.AI × Stanford) and a Deep Learning Specialization. That foundation is what lets me run models on-device — YOLOv11n for vehicle damage assessment, and a Vietnamese voice-command classifier that runs entirely on an ESP32-P4 with no cloud dependency.',
+    body: 'My AI background is formal rather than self-taught: a Machine Learning Specialization (DeepLearning.AI × Stanford) and a Deep Learning Specialization. That foundation is what lets me run models on-device — a computer vision pipeline for vehicle damage assessment, and a Vietnamese voice-command classifier that runs entirely on an ESP32-P4 with no cloud dependency.',
   },
   {
     id: 'lead',

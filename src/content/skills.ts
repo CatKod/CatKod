@@ -74,7 +74,7 @@ export const skills: readonly SkillGroup[] = [
     id: 'ai',
     title: 'Edge AI & software',
     items: [
-      'YOLOv11n',
+      'Computer vision',
       'PyTorch',
       'On-device inference (decision tree, rule-based)',
       'OpenCV',

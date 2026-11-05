@@ -391,9 +391,9 @@ Yêu cầu: `grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))`, card 
 
 #### ③ Sun-Car Damage AI Assessment
 - **Badge:** `SUN scholarship project`
-- **Sub:** `YOLOv11n · ESP32-CAM → STM32 bridge · Edge AI`
-- **Mô tả:** YOLOv11n cho detection + instance segmentation + severity; ESP32-CAM chụp frame, stream kết quả sang STM32 qua UART.
-- **Tech:** YOLOv11n · PyTorch · Ultralytics · ESP32-CAM · STM32 · UART · Flask · Streamlit
+- **Sub:** `Computer vision · ESP32-CAM → STM32 bridge · Edge AI`
+- **Mô tả:** Computer vision cho detection + instance segmentation + severity; ESP32-CAM chụp frame, stream kết quả sang STM32 qua UART.
+- **Tech:** Computer vision · PyTorch · OpenCV · ESP32-CAM · STM32 · UART · Flask · Streamlit
 - **Link:** `github.com/CatKod/Sun-Car-Damage-AI-Assessment`
 
 #### ④ embedded-iot-toolkit — đưa lên đầu danh sách
@@ -494,7 +494,7 @@ Dùng lại nội dung hiện có, tinh gọn. Grid 3 cột desktop / 1 cột mo
 | **Protocols & Connectivity** | OCPP · GB/T 27930 · DLT-645 · MQTT (topic, QoS, retain, LWT) · UART / RS485 / Modbus · WIZnet Ethernet (W5100 → W6300) · Wi-Fi provisioning · ASCII framed protocol có checksum + resync |
 | **Hardware & Power** | EasyEDA Pro · contactor, power module, ramp dòng/áp · DHT, PIR, RFID RC522, LDR, NTC, rain, 74HC595, PT1000 · IMD · tuần tự đóng cắt an toàn · logic analyser · fault injection |
 | **Embedded GUI** | TouchGFX (STM32H7) · LVGL (ESP32-P4) · MIPI-DSI: ST7701, ILI9881C · I/O expander PCA9536 · thiết kế layout & screen-state |
-| **Edge AI & Software** | YOLOv11n · PyTorch · inference trên MCU (decision tree, rule) · OpenCV · Python · FastAPI · Flask · TypeScript · NestJS · PostgreSQL · Prisma · WebSocket · Flutter · React |
+| **Edge AI & Software** | Computer vision · PyTorch · inference trên MCU (decision tree, rule) · OpenCV · Python · FastAPI · Flask · TypeScript · NestJS · PostgreSQL · Prisma · WebSocket · Flutter · React |
 | **Quality & Process** | Unit test firmware trên PC với HAL giả lập · cưỡng chế kiến trúc 4 tầng · single-writer ownership · test bench, soak test, đo tải bus · sinh báo cáo tự động (Python, Node.js) · Markdown → docx |
 
 ---

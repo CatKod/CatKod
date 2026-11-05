@@ -113,10 +113,10 @@ export const featured: readonly Project[] = [
     id: 'sun-car',
     title: 'Sun-Car Damage Assessment',
     badge: 'SUN scholarship project',
-    sub: 'YOLOv11n · ESP32-CAM → STM32 bridge · Edge AI',
+    sub: 'Computer vision · ESP32-CAM → STM32 bridge · Edge AI',
     description:
-      'YOLOv11n for object detection, instance segmentation and severity scoring, built to apply for a SUN scholarship. An ESP32-CAM captures frames and streams the result to an STM32 over UART, so inference sits on the edge rather than in the cloud.',
-    tech: ['YOLOv11n', 'PyTorch', 'Ultralytics', 'ESP32-CAM', 'STM32', 'UART', 'Flask', 'Streamlit'],
+      'A computer vision pipeline for object detection, instance segmentation and severity scoring, built to apply for a SUN scholarship. An ESP32-CAM captures frames and streams the result to an STM32 over UART, so inference sits on the edge rather than in the cloud.',
+    tech: ['Computer vision', 'PyTorch', 'OpenCV', 'ESP32-CAM', 'STM32', 'UART', 'Flask', 'Streamlit'],
     href: 'https://github.com/CatKod/Sun-Car-Damage-AI-Assessment',
     hrefLabel: 'github.com/CatKod/Sun-Car-Damage-AI-Assessment',
   },

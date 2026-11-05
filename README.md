@@ -29,7 +29,7 @@ Most of my firmware work happens at **APES Lab**, where I contribute to a **comm
 
 Alongside that, I build **complete IoT products end-to-end** — PCB design, firmware, backend, and mobile app — mostly as university capstone and scholarship projects.
 
-My AI background is formal, not just self-taught: a **Machine Learning Specialization (DeepLearning.AI × Stanford)** and a **Deep Learning Specialization (DeepLearning.AI)**, five courses in total. That foundation is what lets me run models on-device — YOLOv11n for vehicle damage assessment, and a Vietnamese voice-command classifier running entirely on an ESP32-P4 with no cloud dependency.
+My AI background is formal, not just self-taught: a **Machine Learning Specialization (DeepLearning.AI × Stanford)** and a **Deep Learning Specialization (DeepLearning.AI)**, five courses in total. That foundation is what lets me run models on-device — a computer vision pipeline for vehicle damage assessment, and a Vietnamese voice-command classifier running entirely on an ESP32-P4 with no cloud dependency.
 
 **Currently targeting full-time Embedded / IoT roles**, ideally in Japan. I hold a **JLPT N3** certification, so I can work in Japanese.
 
@@ -146,9 +146,9 @@ A complete IoT product built from the ground up, covering every layer:
 
 ### 🤖 [Sun-Car-Damage-AI-Assessment](https://github.com/CatKod/Sun-Car-Damage-AI-Assessment) — Edge AI for Industrial Inspection
 
-**YOLOv11n vision running on a server, streaming detections to microcontrollers in real time.**
+**Computer vision running on a server, streaming detections to microcontrollers in real time.**
 
-- **Model** — YOLOv11n (Ultralytics) for object detection + instance segmentation + severity estimation
+- **Model** — a PyTorch vision model for object detection + instance segmentation + severity estimation
 - **Edge bridge** — **ESP32-CAM** captures frames and streams detections to an **STM32** over UART
 - **Interfaces** — Flask inference server, Streamlit demo, PC-side STM32 toolchain
 
