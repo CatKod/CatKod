@@ -206,7 +206,7 @@ The control software for a 6-axis industrial arm is provided by the manufacturer
 
 ## 🌱 Leadership
 
-Since my first year at HUST, I've led or co-led **every team project I've been part of** — planning the work, splitting tasks, and shipping the result. That includes the SmartHome capstone (10/10) and my graduation capstone, which I delivered solo across hardware, firmware, and app.
+Since my first year at HUST, I've led or co-led **most team projects I've been part of** — planning the work, splitting tasks, and shipping the result. That includes the SmartHome capstone (10/10) and my graduation capstone, which I delivered solo across hardware, firmware, and app.
 
 I also maintain a personal **hardware notebook** — schematics, pinouts, datasheets, and wiring guides for every board I've worked with — because I keep documentation for the next time I touch that hardware.
 

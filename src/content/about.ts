@@ -10,7 +10,7 @@ export const about = [
   },
   {
     id: 'lead',
-    body: 'Since my first year I have led or co-led every team project I have been part of. I also keep a personal hardware notebook — schematics, pinouts, datasheets and wiring notes for every board I have touched — so the next time that hardware comes up I am not starting from zero.',
+    body: 'Since my first year I have led or co-led most team projects I have been part of. I also keep a personal hardware notebook — schematics, pinouts, datasheets and wiring notes for every board I have touched — so the next time that hardware comes up I am not starting from zero.',
   },
 ] as const;
 

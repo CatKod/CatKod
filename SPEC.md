@@ -518,10 +518,10 @@ Cân nhắc thêm link verify Coursera cho từng khóa (đã có sẵn 5 link t
 3 đoạn, `max-width: 68ch`. Nội dung giữ nguyên từ bản hiện tại (đã viết tốt):
 1. Sinh viên CNTT năm cuối HUST · firmware ở APES Lab · trạm sạc DC thương mại · code NDA
 2. Nền AI có hệ thống: ML Specialization (DeepLearning.AI × Stanford) + DL Specialization → chạy model on-device
-3. Dẫn dắt mọi team project từ năm nhất · giữ sổ tay phần cứng cá nhân
+3. Dẫn dắt hầu hết team project từ năm nhất · giữ sổ tay phần cứng cá nhân
 
 **Bổ sung 1 câu về leadership** (nếu chưa có ở trang web, hiện đang chỉ có ở README):
-> Since my first year at HUST, I've led or co-led every team project I've been part of.
+> Since my first year at HUST, I've led or co-led most team projects I've been part of.
 
 ---
 
