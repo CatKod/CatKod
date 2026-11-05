@@ -267,11 +267,10 @@
     .header-band {
       background: #0D1117;
       color: #E8EDF2;
-      padding: 3.4mm 7mm 2.2mm 7mm;
+      padding: 3.6mm 7mm 3.4mm 7mm;
       border-bottom: 1px solid #161C24;
       display: flex;
       flex-direction: column;
-      gap: 1.2mm;
     }
     .header-top {
       display: flex;
@@ -291,36 +290,6 @@
       color: #00B8A9;
       letter-spacing: -0.01em;
     }
-    .header-readout-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2mm;
-      background: #161C24;
-      border: 1px solid rgba(232, 237, 242, 0.1);
-      border-radius: 2px;
-      padding: 1.0mm 2.0mm;
-    }
-    .readout-cell {
-      display: flex;
-      flex-direction: column;
-      border-right: 1px solid rgba(232, 237, 242, 0.08);
-      padding-right: 1.5mm;
-    }
-    .readout-cell:last-child {
-      border-right: none;
-      padding-right: 0;
-    }
-    .readout-val {
-      font-size: 7.4pt;
-      font-weight: 700;
-      color: #00B8A9;
-      line-height: 1.1;
-    }
-    .readout-lbl {
-      font-size: 6.0pt;
-      color: #8C99A6;
-      line-height: 1.15;
-    }
 
     /* Main Content Body */
     .canvas-body {
@@ -328,6 +297,10 @@
       display: flex;
       flex-direction: column;
     }
+
+    /* Section spacing (rebalanced) */
+    .canvas-section { margin-bottom: 3.9mm; }
+    .canvas-section:last-child { margin-bottom: 0; }
 
     /* Canvas Section Headers */
     .section-title-wrap {
@@ -733,24 +706,6 @@
         <div class="header-top">
           <h1 class="header-name">Hoàng Kim Vĩnh</h1>
           <span class="header-role">Kỹ sư Firmware Nhúng</span>
-        </div>
-        <div class="header-readout-row">
-          <div class="readout-cell">
-            <span class="readout-val mono">32 Súng sạc</span>
-            <span class="readout-lbl">Vòng CAN 16 tủ</span>
-          </div>
-          <div class="readout-cell">
-            <span class="readout-val mono">11 Module</span>
-            <span class="readout-lbl">Kiến trúc 4 tầng</span>
-          </div>
-          <div class="readout-cell">
-            <span class="readout-val mono">89 Kiểm thử</span>
-            <span class="readout-lbl">gcc/clang -Werror</span>
-          </div>
-          <div class="readout-cell">
-            <span class="readout-val mono">10/10</span>
-            <span class="readout-lbl">Điểm đồ án</span>
-          </div>
         </div>
       </header>
 

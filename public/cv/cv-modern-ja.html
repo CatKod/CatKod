@@ -272,7 +272,6 @@
       border-bottom: 1px solid #161C24;
       display: flex;
       flex-direction: column;
-      gap: 1.1mm;
     }
     .header-top {
       display: flex;
@@ -292,36 +291,6 @@
       color: #00B8A9;
       letter-spacing: 0.01em;
     }
-    .header-readout-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2mm;
-      background: #161C24;
-      border: 1px solid rgba(232, 237, 242, 0.1);
-      border-radius: 2px;
-      padding: 0.85mm 1.8mm;
-    }
-    .readout-cell {
-      display: flex;
-      flex-direction: column;
-      border-right: 1px solid rgba(232, 237, 242, 0.08);
-      padding-right: 1.4mm;
-    }
-    .readout-cell:last-child {
-      border-right: none;
-      padding-right: 0;
-    }
-    .readout-val {
-      font-size: 7.2pt;
-      font-weight: 700;
-      color: #00B8A9;
-      line-height: 1.1;
-    }
-    .readout-lbl {
-      font-size: 5.75pt;
-      color: #8C99A6;
-      line-height: 1.2;
-    }
 
     /* Main Content Body */
     .canvas-body {
@@ -329,6 +298,10 @@
       display: flex;
       flex-direction: column;
     }
+
+    /* Section spacing (rebalanced) */
+    .canvas-section { margin-bottom: 0.55mm; }
+    .canvas-section:last-child { margin-bottom: 0; }
 
     /* Canvas Section Headers */
     .section-title-wrap {
@@ -740,24 +713,6 @@
         <div class="header-top">
           <h1 class="header-name">Hoàng Kim Vĩnh</h1>
           <span class="header-role">組み込みファームウェアエンジニア</span>
-        </div>
-        <div class="header-readout-row">
-          <div class="readout-cell">
-            <span class="readout-val mono">32 Guns</span>
-            <span class="readout-lbl">16キャビ CANリング</span>
-          </div>
-          <div class="readout-cell">
-            <span class="readout-val mono">11 Modules</span>
-            <span class="readout-lbl">4層アーキテクチャ</span>
-          </div>
-          <div class="readout-cell">
-            <span class="readout-val mono">89 Tests</span>
-            <span class="readout-lbl">gcc/clang -Werror</span>
-          </div>
-          <div class="readout-cell">
-            <span class="readout-val mono">10/10</span>
-            <span class="readout-lbl">Capstone 評価</span>
-          </div>
         </div>
       </header>
 
