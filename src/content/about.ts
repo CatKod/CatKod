@@ -2,7 +2,7 @@
 export const about = [
   {
     id: 'now',
-    body: 'I am a final-year Information Technology student at Hanoi University of Science and Technology. Most of my firmware work happens at APES Lab, where I contribute to a commercial DC fast-charging station developed with a partner manufacturer. The code is under NDA, but the technical scope is what I do every day.',
+    body: 'I am a final-year Information Technology (Vietnamese-Japanese) student at Hanoi University of Science and Technology, with a focus on embedded systems and IoT. Most of my firmware work happens at APES Lab, where I contribute to a commercial DC fast-charging station developed with a partner manufacturer. The code is under NDA, but the technical scope is what I do every day.',
   },
   {
     id: 'ai',

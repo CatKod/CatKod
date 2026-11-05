@@ -16,7 +16,7 @@
 
 ## 👋 About Me
 
-I'm a **4th-year Information Technology student at Hanoi University of Science and Technology (HUST), Vietnam**, with hands-on experience writing **production embedded firmware** — not just hobby projects.
+I'm a **4th-year Information Technology (Vietnamese-Japanese) student at Hanoi University of Science and Technology (HUST), Vietnam**, with a focus on **embedded systems and IoT** and hands-on experience writing **production embedded firmware** — not just hobby projects.
 
 Most of my firmware work happens at **APES Lab**, where I contribute to a **commercial DC fast-charging station** developed with a partner manufacturer. The codebase is under NDA, so the code stays private — but the technical scope is what I do every day:
 
