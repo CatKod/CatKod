@@ -355,6 +355,14 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Hanoi, Vietnam</span>
         </span>
+        <a class="contact-item" href="https://www.linkedin.com/in/kim-v%C3%A9nh-ho%C3%A0ng-9a306935a/">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a class="contact-item" href="https://github.com/CatKod">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77 5.44 5.44 0 0 0 3.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <span>github.com/CatKod</span>
+        </a>
       </div>
       <div class="header-divider"></div>
     </header>
@@ -364,7 +372,7 @@
       <h2 class="section-heading">ABOUT ME</h2>
       <div class="section-divider"></div>
       <p class="body-p">I am a final-year Information Technology (Vietnamese-Japanese) student at Hanoi University of Science and Technology, with a focus on embedded systems and IoT. Most of my firmware work happens at APES Lab, where I contribute to a commercial DC fast-charging station developed with a partner manufacturer. The code is under NDA, but the technical scope is what I do every day.</p>
-      <p class="body-p">My AI background is formal rather than self-taught: a Machine Learning Specialization (DeepLearning.AI × Stanford) and a Deep Learning Specialization. That foundation is what lets me run models on-device — a computer vision pipeline for vehicle damage assessment, and a Vietnamese voice-command classifier that runs entirely on an ESP32-P4 with no cloud dependency.</p>
+      <p class="body-p">My AI background is formal rather than self-taught (DeepLearning.AI × Stanford), and it is what lets me run models on-device: a computer vision pipeline for vehicle damage assessment, and a Vietnamese voice-command classifier that runs entirely on an ESP32-P4 with no cloud dependency.</p>
     </section>
 
     <!-- 2. EDUCATION -->
@@ -414,12 +422,7 @@
       <div class="entry">
         <div class="meta-line">Academic Projects | 2023 - 2027</div>
         <div class="entry-title">Embedded &amp; IoT Engineer - Team Lead</div>
-        <p class="body-p">Led or co-led most team projects from first year to the present. Personal projects were delivered solo, end to end across hardware, firmware and app.</p>
-        <ul class="entry-bullets">
-          <li>SmartHome - STM32H7 edge controller with a TouchGFX GUI plus an ESP32-S3 on ESP-IDF for Wi-Fi and MQTT. The MCU never depends on the cloud for safety: every command is validated by the STM32H7 before an actuator moves. Graded 10/10.</li>
-          <li>Smart Power Outlet - full product: PCB designed in EasyEDA Pro, ESP-IDF firmware with Wi-Fi provisioning, and a cross-platform Flutter app.</li>
-          <li>Sun-Car Damage Assessment - a computer vision pipeline for vehicle damage detection and severity scoring, with an ESP32-CAM streaming results to an STM32 over UART.</li>
-        </ul>
+        <p class="body-p">Led or co-led most team projects from first year to the present; personal projects were delivered solo, end to end across hardware, firmware and app. Technical detail for each project is in the Projects section below.</p>
       </div>
     </section>
 
@@ -494,6 +497,9 @@
       <div class="section-divider"></div>
       <div class="skills-grid">
         <ul class="skills-col">
+          <li>C (C99, Embedded C)</li>
+          <li>C++</li>
+          <li>basic Assembly</li>
           <li>STM32H7 / STM32F4</li>
           <li>STM32Cube HAL</li>
           <li>Bare-metal register work</li>

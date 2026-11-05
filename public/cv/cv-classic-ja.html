@@ -353,6 +353,14 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
           <span>ベトナム・ハノイ</span>
         </span>
+        <a class="contact-item" href="https://www.linkedin.com/in/kim-v%C3%A9nh-ho%C3%A0ng-9a306935a/">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a class="contact-item" href="https://github.com/CatKod">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77 5.44 5.44 0 0 0 3.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <span>github.com/CatKod</span>
+        </a>
       </div>
       <div class="header-divider"></div>
     </header>
@@ -362,7 +370,7 @@
       <h2 class="section-heading">プロフィール</h2>
       <div class="section-divider"></div>
       <p class="body-p">ハノイ工科大学 情報技術（ベトナム語・日本語プログラム）学科の最終学年にあり、専門分野は組込みシステムと IoT です。ファームウェア関連の仕事のほとんどは APES ラボで行っており、パートナー企業と共同開発した商用 DC急速充電設備の開発に参加しています。ソースコードは NDA の下にあります、毎日本人が担当している技術範囲は次の通りです。</p>
-      <p class="body-p">AI に関する基盤は独学ではなく、体系的に学びました。Machine Learning Specialization（DeepLearning.AI × Stanford）と Deep Learning Specialization を修了しています。この基盤のおかげで、モデルをデバイス上で実行できます。車体損傷評価用のコンピュータビジョンパイプライン、そしてクラウドに依存せず ESP32-P4 上だけで動作するベトナム語の音声コマンド分類器です。</p>
+      <p class="body-p">AI に関する基盤は独学ではなく体系的に学びました（DeepLearning.AI × Stanford）。この基盤のおかげでモデルをデバイス上で実行でき、車体損傷評価用のコンピュータビジョンパイプライン、そしてクラウドに依存せず ESP32-P4 上だけで動作するベトナム語の音声コマンド分類器を実現しています。</p>
     </section>
 
     <!-- 2. 学歴 -->
@@ -412,12 +420,7 @@
       <div class="entry">
         <div class="meta-line">授業プロジェクト | 2023 - 2027</div>
         <div class="entry-title">組み込み・IoT エンジニア - リーダー</div>
-        <p class="body-p">1 年次から現在まで、所属するほとんどのチームプロジェクトをリードまたは共同リード。個人プロジェクトはハードウェア、ファームウェア、アプリまで一人で担当。</p>
-        <ul class="entry-bullets">
-          <li>SmartHome - TouchGFX GUI を搭載した STM32H7 エッジコントローラに、Wi-Fi と MQTT 用の ESP32-S3（ESP-IDF）を組み合わせ。安全性の点で MCU はクラウドに依存せず、すべての指令を STM32H7 が検証してからアクチュエータを動かします。評価 10/10。</li>
-          <li>Smart Power Outlet - 完成品としての製品：PCB は EasyEDA Pro で設計、ファームウェアは Wi-Fi プロビジョニング付き ESP-IDF（資格情報をハードコードしません）、PlatformIO ビルドが ESP32 と ESP8266 の両方をカバーし、クロスプラットフォームの Flutter アプリが制御。</li>
-          <li>Sun-Car Damage Assessment - 車体損傷の物体検出・インスタンスセグメンテーション・重症度スコアリングを行うコンピュータビジョンパイプライン。ESP32-CAM が画像を撮影し、UART 経由で STM32 に結果を転送するため、推論はクラウドではなくエッジで実行されます。</li>
-        </ul>
+        <p class="body-p">1 年次から現在まで、所属するほとんどのチームプロジェクトをリードまたは共同リード。個人プロジェクトはハードウェア、ファームウェア、アプリまで一人で担当。各プロジェクトの技術的な詳細は下部のプロジェクト欄に記載しています。</p>
       </div>
     </section>
 
@@ -492,6 +495,9 @@
       <div class="section-divider"></div>
       <div class="skills-grid">
         <ul class="skills-col">
+          <li>C (C99, Embedded C)</li>
+          <li>C++</li>
+          <li>基本的な Assembly</li>
           <li>STM32H7 / STM32F4</li>
           <li>STM32Cube HAL</li>
           <li>Bare-metal register work</li>

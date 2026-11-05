@@ -355,6 +355,14 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Hà Nội, Việt Nam</span>
         </span>
+        <a class="contact-item" href="https://www.linkedin.com/in/kim-v%C3%A9nh-ho%C3%A0ng-9a306935a/">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a class="contact-item" href="https://github.com/CatKod">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77 5.44 5.44 0 0 0 3.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <span>github.com/CatKod</span>
+        </a>
       </div>
       <div class="header-divider"></div>
     </header>
@@ -364,7 +372,7 @@
       <h2 class="section-heading">Hồ sơ</h2>
       <div class="section-divider"></div>
       <p class="body-p">Tôi là sinh viên năm cuối ngành Công nghệ Thông tin Việt Nhật tại Đại học Bách khoa Hà Nội, với định hướng chuyên môn là hệ thống nhúng và IoT. Phần lớn công việc firmware của tôi diễn ra tại Phòng thí nghiệm APES, nơi tôi tham gia phát triển trạm sạc nhanh DC thương mại được phát triển cùng một nhà sản xuất đối tác. Mã nguồn nằm dưới NDA, nhưng phạm vi kỹ thuật chính là công việc tôi làm hằng ngày.</p>
-      <p class="body-p">Nền tảng AI của tôi được đào tạo bài bản chứ không phải tự học: một chương trình Chuyên sâu Học máy (DeepLearning.AI × Stanford) và một chương trình Chuyên sâu Học sâu. Chính nền tảng đó cho phép tôi chạy mô hình ngay trên thiết bị - một pipeline computer vision cho đánh giá hư hại xe ô tô, và một bộ phân loại lệnh thoại tiếng Việt chạy hoàn toàn trên ESP32-P4 mà không phụ thuộc đám mây.</p>
+      <p class="body-p">Nền tảng AI của tôi được đào tạo bài bản (DeepLearning.AI × Stanford) chứ không phải tự học, và điều đó cho phép tôi chạy mô hình ngay trên thiết bị: một pipeline computer vision cho đánh giá hư hại xe ô tô, và một bộ phân loại lệnh thoại tiếng Việt chạy hoàn toàn trên ESP32-P4 mà không phụ thuộc đám mây.</p>
     </section>
 
     <!-- 2. HỌC VẤN -->
@@ -414,12 +422,7 @@
       <div class="entry">
         <div class="meta-line">Dự án trong quá trình học | 2023 - 2027</div>
         <div class="entry-title">Kỹ sư Nhúng &amp; IoT - Trưởng nhóm</div>
-        <p class="body-p">Dẫn dắt hoặc đồng dẫn dắt hầu hết các dự án nhóm từ năm nhất tới nay. Các dự án cá nhân được hoàn thành một mình xuyên suốt từ phần cứng, firmware đến ứng dụng.</p>
-        <ul class="entry-bullets">
-          <li>SmartHome - bộ điều khiển biên STM32H7 với giao diện TouchGFX, cùng ESP32-S3 trên ESP-IDF cho Wi-Fi và MQTT. MCU không bao giờ phụ thuộc đám mây về an toàn: mọi lệnh đều được STM32H7 kiểm tra trước khi cơ cấu chạy. Điểm 10/10.</li>
-          <li>Smart Power Outlet - sản phẩm hoàn chỉnh: PCB thiết kế trên EasyEDA Pro, firmware ESP-IDF có Wi-Fi provisioning, và ứng dụng Flutter đa nền tảng.</li>
-          <li>Sun-Car Damage Assessment - pipeline computer vision cho phát hiện và chấm điểm mức độ hư hại xe, với ESP32-CAM truyền kết quả tới STM32 qua UART.</li>
-        </ul>
+        <p class="body-p">Dẫn dắt hoặc đồng dẫn dắt hầu hết các dự án nhóm từ năm nhất tới nay; dự án cá nhân hoàn thành một mình từ phần cứng, firmware đến ứng dụng. Chi tiết kỹ thuật từng dự án ở mục Dự án bên dưới.</p>
       </div>
     </section>
 
@@ -494,6 +497,9 @@
       <div class="section-divider"></div>
       <div class="skills-grid">
         <ul class="skills-col">
+          <li>C (C99, Embedded C)</li>
+          <li>C++</li>
+          <li>Assembly cơ bản</li>
           <li>STM32H7 / STM32F4</li>
           <li>STM32Cube HAL</li>
           <li>Bare-metal register work</li>
